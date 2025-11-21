@@ -168,7 +168,7 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                                         <span className="w-8 h-1 bg-accent-yellow"></span> Subjective Metrics (The User Proof)
                                     </h3>
                                     <p className="text-lg text-gray-700 mb-8">
-                                        We conducted a user study where participants rated the videos (Mean Opinion Score - MOS).
+                                        I conducted a user study where participants rated the videos (Mean Opinion Score - MOS).
                                     </p>
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -213,9 +213,47 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
-                                <p className="text-lg text-gray-700">
+                                <p className="text-lg text-gray-700 mb-8">
                                     The final model successfully generates high-fidelity, emotionally expressive avatars that maintain consistent identity and gaze, significantly reducing the "Uncanny Valley" effect.
                                 </p>
+                                <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                                    <p className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">Emotion Generation Comparison</p>
+                                    <img src={`${import.meta.env.BASE_URL}results-comparison.png`} alt="EmoteGAN Results showing different emotions across epochs" className="w-full rounded-lg" />
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Future Scope */}
+                        <section className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                            <div className="md:col-span-4">
+                                <h2 className="text-3xl font-serif sticky top-32">Future Scope</h2>
+                            </div>
+                            <div className="md:col-span-8 space-y-8">
+                                <p className="text-xl leading-relaxed text-gray-700">
+                                    While EmoteGAN has successfully bridged the gap between static avatars and emotional intelligence, the journey doesn't end here. The next phase focuses on scalability and deeper immersion.
+                                </p>
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                        <div className="w-12 h-12 bg-accent-blue/10 rounded-full flex items-center justify-center mb-4 text-2xl">⚡</div>
+                                        <h3 className="text-lg font-bold mb-2">Real-Time Edge Processing</h3>
+                                        <p className="text-gray-600 text-sm">Optimizing the BSRGAN pipeline to run locally on mobile devices (iOS/Android) for latency-free interaction without cloud dependency.</p>
+                                    </div>
+                                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                        <div className="w-12 h-12 bg-accent-pink/10 rounded-full flex items-center justify-center mb-4 text-2xl">🎭</div>
+                                        <h3 className="text-lg font-bold mb-2">Micro-Expression Synthesis</h3>
+                                        <p className="text-gray-600 text-sm">Enhancing the SE Network to capture fleeting micro-expressions (0.5s duration) to convey subconscious emotional cues.</p>
+                                    </div>
+                                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                        <div className="w-12 h-12 bg-accent-yellow/10 rounded-full flex items-center justify-center mb-4 text-2xl">🗣️</div>
+                                        <h3 className="text-lg font-bold mb-2">Multimodal Context Awareness</h3>
+                                        <p className="text-gray-600 text-sm">Integrating NLP context analysis so the avatar reacts not just to <em>how</em> something is said (audio), but <em>what</em> is said (text).</p>
+                                    </div>
+                                    <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-shadow">
+                                        <div className="w-12 h-12 bg-accent-green/10 rounded-full flex items-center justify-center mb-4 text-2xl">🌐</div>
+                                        <h3 className="text-lg font-bold mb-2">Web-Based API</h3>
+                                        <p className="text-gray-600 text-sm">Developing a lightweight REST API to allow developers to integrate EmoteGAN avatars into existing web applications and games.</p>
+                                    </div>
+                                </div>
                             </div>
                         </section>
 
