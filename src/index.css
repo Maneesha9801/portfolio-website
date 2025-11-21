@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Bright & Fun Palette */
+  --bg-paper: #FFFDF9;
+  /* Slightly warmer off-white */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+
+  /* Accents */
+  --accent-yellow: #FFE870;
+  /* Bright pastel yellow */
+  --accent-pink: #FFB7D5;
+  /* Pastel pink */
+  --accent-blue: #A5D8FF;
+  /* Pastel blue */
+  --accent-green: #B8E6A8;
+  /* Pastel green */
+}
+
+body {
+  background-color: var(--bg-paper);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: radial-gradient(#E5E5E5 1px, transparent 1px);
+  background-size: 24px 24px;
+  /* Dot pattern for texture */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* Illustrative Elements */
+.sparkle {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.highlight-text {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.highlight-text::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: -4px;
+  right: -4px;
+  height: 12px;
+  background-color: var(--accent-yellow);
+  z-index: -1;
+  transform: rotate(-1deg);
+  border-radius: 4px;
+  opacity: 0.7;
+}
