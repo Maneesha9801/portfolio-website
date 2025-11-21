@@ -123,7 +123,7 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                             <div className="md:col-span-8">
                                 <div className="bg-gray-50 rounded-2xl overflow-hidden border border-gray-200 shadow-lg mb-8">
                                     <img
-                                        src="/workflow.jpg"
+                                        src={`${import.meta.env.BASE_URL}workflow.jpg`}
                                         alt="EmoteGAN Design Workflow"
                                         className="w-full h-auto"
                                     />

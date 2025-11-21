@@ -10,7 +10,7 @@ export const About: React.FC = () => {
                         <div className="absolute inset-0 bg-accent-green rounded-full transform -translate-x-4 translate-y-4 -z-10"></div>
                         <div className="aspect-square rounded-full overflow-hidden border-4 border-black">
                             <img
-                                src="/maneesha.jpg"
+                                src={`${import.meta.env.BASE_URL}maneesha.jpg`}
                                 alt="Maneesha"
                                 className="w-full h-full object-cover"
                             />

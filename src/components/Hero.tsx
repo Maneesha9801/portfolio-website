@@ -44,7 +44,7 @@ export const Hero: React.FC = () => {
                     <div className="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-500">
                         <div className="absolute inset-0 bg-accent-pink rounded-2xl transform translate-x-4 translate-y-4 -z-10"></div>
                         <img
-                            src="/maneesha.jpg"
+                            src={`${import.meta.env.BASE_URL}maneesha.jpg`}
                             alt="Maneesha"
                             className="w-full max-w-md mx-auto rounded-2xl border-4 border-black shadow-xl"
                         />
