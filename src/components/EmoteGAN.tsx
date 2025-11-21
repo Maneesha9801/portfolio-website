@@ -97,7 +97,8 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                                     <div className="group">
                                         <h3 className="text-2xl font-serif mb-4 group-hover:text-accent-blue transition-colors">Intervention A: Fixing the "Dead Eye" Stare</h3>
                                         <p className="text-gray-600 mb-2"><strong>The UX Friction:</strong> Standard GANs ignore eye movement, creating a "zombie-like" stare.</p>
-                                        <p className="text-gray-800"><strong>The Engineering Solution:</strong> Integrated MTCNN to isolate the eye region and devised a specific Eye Loss Function to penalize gaze drift.</p>
+                                        <p className="text-gray-800 mb-4"><strong>The Engineering Solution:</strong> Integrated MTCNN to isolate the eye region and devised a specific Eye Loss Function to penalize gaze drift.</p>
+                                        <img src={`${import.meta.env.BASE_URL}eye-mask.png`} alt="Eye Mask Processing" className="w-full max-w-md rounded-lg border border-gray-200 shadow-sm" />
                                     </div>
                                     <hr className="border-gray-100" />
                                     <div className="group">
@@ -137,30 +138,64 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                         {/* Validation */}
                         <section className="grid grid-cols-1 md:grid-cols-12 gap-12">
                             <div className="md:col-span-4">
-                                <h2 className="text-3xl font-serif sticky top-32">Validation</h2>
+                                <h2 className="text-3xl font-serif sticky top-32">Validation: User-Centric Metrics</h2>
                             </div>
-                            <div className="md:col-span-8">
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                                    <div className="p-8 bg-black text-white rounded-2xl relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-green/20 rounded-full blur-3xl"></div>
+                            <div className="md:col-span-8 space-y-12">
+                                <p className="text-xl leading-relaxed text-gray-700">
+                                    I didn't just rely on code to tell me it worked. I validated the User Experience through human testing.
+                                </p>
+
+                                {/* Objective Metrics */}
+                                <div>
+                                    <h3 className="text-2xl font-serif mb-6 flex items-center gap-3">
+                                        <span className="w-8 h-1 bg-accent-green"></span> Objective Metrics (The Engineering Proof)
+                                    </h3>
+                                    <div className="bg-black text-white p-8 rounded-2xl relative overflow-hidden">
+                                        <div className="absolute top-0 right-0 w-64 h-64 bg-accent-green/20 rounded-full blur-3xl"></div>
                                         <div className="relative z-10">
-                                            <div className="text-5xl font-bold text-accent-green mb-2">86.8%</div>
-                                            <div className="text-lg font-medium mb-4">Reduction in FID Score</div>
-                                            <p className="text-sm text-gray-400">Proves generated images are statistically indistinguishable from real photos.</p>
+                                            <div className="text-6xl font-bold text-accent-green mb-2">86.85%</div>
+                                            <div className="text-xl font-medium mb-2">Reduction in FID Score</div>
+                                            <p className="text-gray-400">Frechet Inception Distance (Lower is better). This proves the generated images are statistically indistinguishable from real human photos.</p>
                                         </div>
                                     </div>
-                                    <div className="p-8 bg-black text-white rounded-2xl relative overflow-hidden">
-                                        <div className="absolute top-0 right-0 w-32 h-32 bg-accent-yellow/20 rounded-full blur-3xl"></div>
-                                        <div className="relative z-10">
-                                            <div className="text-5xl font-bold text-accent-yellow mb-2">79.3%</div>
-                                            <div className="text-lg font-medium mb-4">Rated "Realistic"</div>
-                                            <p className="text-sm text-gray-400">Compared to only 18% for the baseline model in user studies.</p>
+                                </div>
+
+                                {/* Subjective Metrics */}
+                                <div>
+                                    <h3 className="text-2xl font-serif mb-6 flex items-center gap-3">
+                                        <span className="w-8 h-1 bg-accent-yellow"></span> Subjective Metrics (The Design Proof)
+                                    </h3>
+                                    <p className="text-lg text-gray-700 mb-8">
+                                        I conducted a user study where participants rated the videos (Mean Opinion Score - MOS).
+                                    </p>
+
+                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
+                                        <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                            <div className="text-4xl font-bold text-accent-yellow mb-2">79.3%</div>
+                                            <div className="font-bold text-gray-800 mb-1">Rated "Realistic"</div>
+                                            <p className="text-sm text-gray-600">vs. only 18% for the base model.</p>
+                                        </div>
+                                        <div className="bg-gray-50 p-6 rounded-xl border border-gray-200">
+                                            <div className="text-4xl font-bold text-accent-pink mb-2">62%</div>
+                                            <div className="font-bold text-gray-800 mb-1">Visually Pleasing</div>
+                                            <p className="text-sm text-gray-600">vs. 12.9% for the base model.</p>
+                                        </div>
+                                    </div>
+
+                                    {/* Evidence Images */}
+                                    <div className="space-y-8">
+                                        <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                                            <p className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">MOS Scores Data</p>
+                                            <img src={`${import.meta.env.BASE_URL}mos-table.png`} alt="MOS Scores Table" className="w-full rounded-lg" />
+                                        </div>
+                                        <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm">
+                                            <p className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wider">User Ratings Distribution</p>
+                                            <img src={`${import.meta.env.BASE_URL}likert-ratings.png`} alt="User Ratings Chart" className="w-full rounded-lg" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </section>
-
                         {/* Impact */}
                         <section className="bg-accent-yellow/10 rounded-3xl p-12 text-center">
                             <h2 className="text-3xl font-serif mb-6">Reflection & Impact</h2>
