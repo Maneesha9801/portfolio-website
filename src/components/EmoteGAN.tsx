@@ -57,6 +57,40 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                         </div>
                     </div>
 
+                    {/* Project Demo */}
+                    <section className="mb-20">
+                        <div className="bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                            <video
+                                className="w-full aspect-video"
+                                controls
+                                poster={`${import.meta.env.BASE_URL}workflow.jpg`} // Using workflow image as placeholder/poster for now
+                            >
+                                <source src={`${import.meta.env.BASE_URL}demo-video.mp4`} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p className="text-center text-gray-500 mt-4 text-sm">
+                            Demonstration of EmoteGAN generating realistic talking face video.
+                        </p>
+                    </section>
+
+                    {/* Project Demo */}
+                    <section className="mb-20">
+                        <div className="bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                            <video
+                                className="w-full aspect-video"
+                                controls
+                                poster={`${import.meta.env.BASE_URL}workflow.jpg`}
+                            >
+                                <source src={`${import.meta.env.BASE_URL}demo-video.mp4`} type="video/mp4" />
+                                Your browser does not support the video tag.
+                            </video>
+                        </div>
+                        <p className="text-center text-gray-500 mt-4 text-sm">
+                            Demonstration of EmoteGAN generating realistic talking face video.
+                        </p>
+                    </section>
+
                     {/* Content Sections */}
                     <div className="space-y-32">
 
@@ -77,7 +111,7 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                                 <div>
                                     <h3 className="text-lg font-bold mb-2">The Design Challenge</h3>
                                     <p className="text-lg text-gray-600">
-                                        How might we engineer a generative system that doesn't just "lip-sync" audio, but actually performs emotion to create a genuine human connection?
+                                        How can we engineer a generative system that doesn't just "lip-sync" audio, but actually performs emotion to create a genuine human connection?
                                     </p>
                                 </div>
                             </div>
@@ -90,7 +124,7 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                             </div>
                             <div className="md:col-span-8 space-y-12">
                                 <p className="text-xl leading-relaxed text-gray-700">
-                                    My approach was not just to stack neural networks, but to treat algorithmic failures as <strong>User Experience (UX) bugs</strong>. I identified three critical "Trust Breakers" and engineered specific technical solutions.
+                                    My approach and main role in the team was not just to stack neural networks, but to treat algorithmic failures as <strong>User Experience (UX) bugs</strong>. I identified three critical "Trust Breakers" and engineered specific technical solutions.
                                 </p>
 
                                 <div className="space-y-8">
@@ -142,20 +176,20 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                             </div>
                             <div className="md:col-span-8 space-y-12">
                                 <p className="text-xl leading-relaxed text-gray-700">
-                                    I didn't just rely on code to tell me it worked. I validated the User Experience through human testing.
+                                    After comprehensive testing, we didn't just rely on code, we validated the User Experience through human testing as well.
                                 </p>
 
                                 {/* Objective Metrics */}
                                 <div>
                                     <h3 className="text-2xl font-serif mb-6 flex items-center gap-3">
-                                        <span className="w-8 h-1 bg-accent-green"></span> Objective Metrics (The Engineering Proof)
+                                        <span className="w-8 h-1 bg-accent-green"></span> Objective Metrics
                                     </h3>
                                     <div className="bg-black text-white p-8 rounded-2xl relative overflow-hidden">
                                         <div className="absolute top-0 right-0 w-64 h-64 bg-accent-green/20 rounded-full blur-3xl"></div>
                                         <div className="relative z-10">
                                             <div className="text-6xl font-bold text-accent-green mb-2">86.85%</div>
                                             <div className="text-xl font-medium mb-2">Reduction in FID Score</div>
-                                            <p className="text-gray-400">Frechet Inception Distance (Lower is better). This proves the generated images are statistically indistinguishable from real human photos.</p>
+                                            <p className="text-gray-400">Frechet Inception Distance (Lower is better). FID measures how similar generated images are to real ones, capturing both quality and diversity. This score proves the generated images are statistically indistinguishable from real human photos.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -163,10 +197,10 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                                 {/* Subjective Metrics */}
                                 <div>
                                     <h3 className="text-2xl font-serif mb-6 flex items-center gap-3">
-                                        <span className="w-8 h-1 bg-accent-yellow"></span> Subjective Metrics (The Design Proof)
+                                        <span className="w-8 h-1 bg-accent-yellow"></span> Subjective Metrics (The User Proof)
                                     </h3>
                                     <p className="text-lg text-gray-700 mb-8">
-                                        I conducted a user study where participants rated the videos (Mean Opinion Score - MOS).
+                                        We conducted a user study where participants rated the videos (Mean Opinion Score - MOS).
                                     </p>
 
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-8">
@@ -202,10 +236,31 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                             <p className="text-xl text-gray-800 max-w-3xl mx-auto mb-8">
                                 This project bridged the gap between backend logic and frontend experience. It demonstrated that "Empathy" in AI isn't magic—it's a series of intentional engineering decisions.
                             </p>
-                            <div className="flex flex-wrap justify-center gap-4">
+                            <div className="flex flex-wrap justify-center gap-4 mb-12">
                                 <span className="bg-white px-6 py-3 rounded-full font-medium border border-gray-200 shadow-sm">Digital Therapy</span>
                                 <span className="bg-white px-6 py-3 rounded-full font-medium border border-gray-200 shadow-sm">Accessible Content</span>
                                 <span className="bg-white px-6 py-3 rounded-full font-medium border border-gray-200 shadow-sm">Human-AI Interaction</span>
+                            </div>
+
+                            <div className="border-t border-gray-200 pt-12">
+                                <h3 className="text-xl font-serif mb-6">Read the Full Research</h3>
+                                <div className="flex flex-wrap justify-center gap-6">
+                                    <a
+                                        href={`${import.meta.env.BASE_URL}project-paper.pdf`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="flex items-center gap-2 bg-black text-white px-6 py-3 rounded-full hover:bg-gray-800 transition-colors"
+                                    >
+                                        📄 View Project Paper
+                                    </a>
+                                    <a
+                                        href={`${import.meta.env.BASE_URL}project-presentation.pptx`}
+                                        download
+                                        className="flex items-center gap-2 bg-white text-black border border-black px-6 py-3 rounded-full hover:bg-gray-50 transition-colors"
+                                    >
+                                        📊 Download Presentation
+                                    </a>
+                                </div>
                             </div>
                         </section>
 
