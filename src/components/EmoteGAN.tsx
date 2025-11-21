@@ -43,7 +43,7 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                         </div>
                         <div>
                             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">Timeline</h3>
-                            <p className="text-lg">2023 - Present</p>
+                            <p className="text-lg">Feb 2023 - Jan 2024</p>
                         </div>
                         <div>
                             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">Tech Stack</h3>
@@ -57,39 +57,7 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                         </div>
                     </div>
 
-                    {/* Project Demo */}
-                    <section className="mb-20">
-                        <div className="bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
-                            <video
-                                className="w-full aspect-video"
-                                controls
-                                poster={`${import.meta.env.BASE_URL}workflow.jpg`} // Using workflow image as placeholder/poster for now
-                            >
-                                <source src={`${import.meta.env.BASE_URL}demo-video.mp4`} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <p className="text-center text-gray-500 mt-4 text-sm">
-                            Demonstration of EmoteGAN generating realistic talking face video.
-                        </p>
-                    </section>
 
-                    {/* Project Demo */}
-                    <section className="mb-20">
-                        <div className="bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
-                            <video
-                                className="w-full aspect-video"
-                                controls
-                                poster={`${import.meta.env.BASE_URL}workflow.jpg`}
-                            >
-                                <source src={`${import.meta.env.BASE_URL}demo-video.mp4`} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video>
-                        </div>
-                        <p className="text-center text-gray-500 mt-4 text-sm">
-                            Demonstration of EmoteGAN generating realistic talking face video.
-                        </p>
-                    </section>
 
                     {/* Content Sections */}
                     <div className="space-y-32">
@@ -230,6 +198,27 @@ export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
                                 </div>
                             </div>
                         </section>
+                        {/* Results */}
+                        <section className="grid grid-cols-1 md:grid-cols-12 gap-12">
+                            <div className="md:col-span-4">
+                                <h2 className="text-3xl font-serif sticky top-32">Results</h2>
+                            </div>
+                            <div className="md:col-span-8">
+                                <div className="bg-black rounded-2xl overflow-hidden shadow-2xl border border-gray-800 mb-6">
+                                    <video
+                                        className="w-full aspect-video"
+                                        controls
+                                    >
+                                        <source src={`${import.meta.env.BASE_URL}demo-video.mp4`} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                                <p className="text-lg text-gray-700">
+                                    The final model successfully generates high-fidelity, emotionally expressive avatars that maintain consistent identity and gaze, significantly reducing the "Uncanny Valley" effect.
+                                </p>
+                            </div>
+                        </section>
+
                         {/* Impact */}
                         <section className="bg-accent-yellow/10 rounded-3xl p-12 text-center">
                             <h2 className="text-3xl font-serif mb-6">Reflection & Impact</h2>
