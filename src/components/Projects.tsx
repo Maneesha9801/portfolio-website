@@ -8,6 +8,15 @@ interface ProjectsProps {
 export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
     const projects = [
         {
+            id: 'netoptix',
+            title: "NetOptix",
+            category: "Network Visualization",
+            description: "Reducing cognitive load in network debugging by transforming abstract CLI logs into a live, spatial topology.",
+            image: `${import.meta.env.BASE_URL}netoptix-demo.webp`,
+            tags: ["React Flow", "D3.js", "UX Research"],
+            color: "bg-black text-white" // Dark theme for this card
+        },
+        {
             id: 'emotegan',
             title: 'EmoteGAN',
             category: 'AI & UX Research',
