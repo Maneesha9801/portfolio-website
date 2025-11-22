@@ -20,20 +20,20 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
             </nav>
 
             <main className="pt-32 pb-20 px-6">
-                <div className="container mx-auto max-w-5xl">
+                <div className="container mx-auto max-w-[90rem]">
                     {/* Hero Section */}
-                    <header className="mb-20">
+                    <header className="mb-20 max-w-5xl mx-auto">
                         <h1 className="text-5xl md:text-7xl font-serif mb-8 relative inline-block">
                             NetOptix
                             <span className="absolute -bottom-2 left-0 w-full h-4 bg-accent-green -z-10 transform rotate-1 opacity-50"></span>
                         </h1>
-                        <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed max-w-3xl">
+                        <p className="text-2xl md:text-3xl text-gray-800 leading-relaxed">
                             Visualizing Invisible Infrastructure: Reducing cognitive load in network debugging by transforming abstract CLI logs into a live, spatial topology.
                         </p>
                     </header>
 
                     {/* Project Details Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 border-y border-gray-200 py-12">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-24 border-y border-gray-200 py-12 max-w-5xl mx-auto">
                         <div>
                             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">My Role</h3>
                             <ul className="space-y-2 text-lg">
@@ -60,16 +60,21 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
 
                     {/* Project Demo */}
                     <section className="mb-20">
-                        <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
+                        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white">
                             <img
                                 src={`${import.meta.env.BASE_URL}netoptix-demo.png`}
                                 alt="NetOptix Dashboard Demo"
                                 className="w-full h-auto"
                             />
                         </div>
-                        <p className="text-center text-gray-500 mt-4 text-sm font-mono">
-                            Live topology visualization with real-time traffic health indicators.
-                        </p>
+                        <div className="flex flex-col items-center mt-4 gap-2">
+                            <p className="text-center text-gray-500 text-sm font-mono">
+                                Live topology visualization with real-time traffic health indicators.
+                            </p>
+                            <p className="text-xs text-gray-400">
+                                Source: Internal Prototype Recording
+                            </p>
+                        </div>
                     </section>
 
                     {/* Content Sections */}
