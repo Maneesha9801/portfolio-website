@@ -115,6 +115,30 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                 <h2 className="text-3xl font-serif sticky top-32">The Approach</h2>
                             </div>
                             <div className="md:col-span-8 space-y-12">
+                                <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                                    <h3 className="text-2xl font-serif font-medium text-slate-800 mb-4">The Setup</h3>
+                                    <p className="text-slate-600 leading-relaxed mb-6">
+                                        The visualization is built on a robust network configuration designed for high availability and traffic engineering:
+                                    </p>
+                                    <ul className="space-y-3 font-mono text-sm text-slate-600 bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                        <li className="flex items-center gap-3">
+                                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                            IGP = ISIS ML
+                                        </li>
+                                        <li className="flex items-center gap-3">
+                                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                                            Topology includes Multiple flex algo slices
+                                        </li>
+                                        <li className="flex items-center gap-3">
+                                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                            ISIS FRR - Ti-LFA enabled
+                                        </li>
+                                        <li className="flex items-center gap-3">
+                                            <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                            BFD configured = 10*3
+                                        </li>
+                                    </ul>
+                                </div>
                                 <p className="text-xl leading-relaxed text-gray-700">
                                     I approached this not just as a dashboard, but as a translation layer. I applied Shneiderman’s Mantra of interaction design: "Overview first, zoom and filter, then details-on-demand."
                                 </p>
