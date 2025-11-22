@@ -1,0 +1,539 @@
+N1
+set system ne-id 9999
+set system login class remote allow-commands support
+set system login user admin class super-user
+set system login user admin full-name Administrator
+set system login user admin uid 100
+set system syslog archive world-readable
+set system syslog file auth.log authorization any
+set system syslog file change-log.log change-log any
+set system syslog file cron.log cron any
+set system syslog file daemon.log daemon any
+set system syslog file firewall.log firewall any
+set system syslog file interactive-commands.log interactive-commands any
+set system syslog file kernel.log kernel any
+set system syslog file liveupdate.log live-update any
+set system syslog file prefix_trace_log.log path-trace any
+set system syslog file procman.log procman any
+set system syslog file shadetree.log shadetree any
+set system syslog file tracking-policy.log tracking-policy any
+set system syslog file user.log user any
+set system syslog file ztp.log ztp info
+set system am-pm-server ems server-ip 169.254.10.13/255.255.255.0
+set system am-pm-server ems-rdr server-ip 169.254.10.14/255.255.255.0
+set system am-pm-server lct server-ip 127.0.0.1/255.255.255.0
+set system cpe-type Neptune1800_1T_pe
+set system dp-option G1_23_PTP_Low
+set chassis cps slot csa cips-1t
+set chassis cps slot csb cips-1t
+set chassis ecb-unit ecb-1800
+set chassis fcu-unit fcu-1800
+set chassis mcp slot msa mcp-1800
+set chassis mcp slot msb mcp-1800
+set chassis powersupply slot psa inf-1800
+set chassis powersupply slot psb inf-1800
+set chassis slot ts11 data-card dhge-10 csfp-cage cage1 dual
+set chassis slot ts11 data-card dhge-10 port ge-ts11/1 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/3 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/4 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/5 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/6 enable
+set chassis tmu input-settings internal-timing-enable quality-sdh sec
+set interfaces ge-ts11/1 type vlan-tagged
+set interfaces ge-ts11/1 unit 1 family inet address 12.12.1.1/255.255.255.0
+set interfaces ge-ts11/1 unit 1 family mpls
+set interfaces ge-ts11/1 unit 1 family iso
+set interfaces ge-ts11/1 unit 1 vlan-id-list 1
+set interfaces ge-ts11/3 type vlan-tagged
+set interfaces ge-ts11/3 unit 1 family inet address 13.13.1.1/255.255.255.0
+set interfaces ge-ts11/3 unit 1 family mpls
+set interfaces ge-ts11/3 unit 1 family iso
+set interfaces ge-ts11/3 unit 1 vlan-id-list 1
+set interfaces ge-ts11/4 type vlan-tagged
+set interfaces ge-ts11/4 unit 1 family inet address 14.14.1.1/255.255.255.0
+set interfaces ge-ts11/4 unit 1 family mpls
+set interfaces ge-ts11/4 unit 1 family iso
+set interfaces ge-ts11/4 unit 1 vlan-id-list 1
+set interfaces ge-ts11/5 type vlan-tagged
+set interfaces ge-ts11/5 unit 1 family inet address 15.15.1.1/255.255.255.0
+set interfaces ge-ts11/5 unit 1 family mpls
+set interfaces ge-ts11/5 unit 1 family iso
+set interfaces ge-ts11/5 unit 1 vlan-id-list 1
+set interfaces ge-ts11/6 type vlan-tagged
+set interfaces ge-ts11/6 unit 1 family inet address 16.16.1.1/255.255.255.0
+set interfaces ge-ts11/6 unit 1 family mpls
+set interfaces ge-ts11/6 unit 1 family iso
+set interfaces ge-ts11/6 unit 1 vlan-id-list 1
+set interfaces lo0 unit 0 family inet address 1.1.1.1/255.255.255.255
+set interfaces lo0 unit 0 family iso
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 advertise-delay 100
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/4.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/4.1 advertise-delay 100
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/6.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/6.1 advertise-delay 10
+set protocols isis protocol-instance 0 enable
+set protocols isis protocol-instance 0 system-id-host-name R1
+set protocols isis protocol-instance 0 segment-routing flex-algo 140 advertise FAD_IGP_140
+set protocols isis protocol-instance 0 segment-routing flex-algo 141 advertise FAD_TE_141
+set protocols isis protocol-instance 0 segment-routing flex-algo 142 advertise FAD_DELAY_142
+set protocols isis protocol-instance 0 traffic-engineering advertise-asla flex-algo
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 metric 100
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 te-metric 100
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level 2 metric 100
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface lo0.0 passive
+set protocols isis protocol-instance 0 interface lo0.0 level-type L2
+set protocols isis protocol-instance 0 iso-addressing area-address 34.0010
+set protocols isis protocol-instance 0 iso-addressing system-id 1111.1111.1111
+set protocols isis protocol-instance 0 fast-reroute-options enable
+set protocols isis protocol-instance 0 fast-reroute-options ti-lfa
+set protocols isis protocol-instance 0 level-type L2
+set protocols segment-routing flex-algo FAD_DELAY_142 priority 250
+set protocols segment-routing flex-algo FAD_DELAY_142 metric-type Delay
+set protocols segment-routing flex-algo FAD_IGP_140 priority 250
+set protocols segment-routing flex-algo FAD_IGP_140 metric-type IGP
+set protocols segment-routing flex-algo FAD_TE_141 priority 250
+set protocols segment-routing flex-algo FAD_TE_141 metric-type TE
+set protocols segment-routing ipv4-adj-segment-mode both
+set protocols segment-routing ipv4-node-segments lo0.0 sid-value 111
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 140 sid-value 1140
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 141 sid-value 1141
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 142 sid-value 1142
+set switching-options switching-mode ip-mpls_pe
+set switching-options label-range-profile general-mpls-profile
+set routing-options inet-ecmp-disable
+set routing-options inet6-ecmp-disable
+set routing-options router-id 1.1.1.1
+set forwarding-options max-tx-l3vpn-labels 24k
+set forwarding-options max-tm-mc-groups-for-evpn-lifs 12288
+
+N2 
+set system ne-id 9999
+set system login class remote allow-commands support
+set system login user admin class super-user
+set system login user admin full-name Administrator
+set system login user admin uid 100
+set system syslog archive world-readable
+set system syslog file auth.log authorization any
+set system syslog file change-log.log change-log any
+set system syslog file cron.log cron any
+set system syslog file daemon.log daemon any
+set system syslog file firewall.log firewall any
+set system syslog file interactive-commands.log interactive-commands any
+set system syslog file kernel.log kernel any
+set system syslog file liveupdate.log live-update any
+set system syslog file prefix_trace_log.log path-trace any
+set system syslog file procman.log procman any
+set system syslog file shadetree.log shadetree any
+set system syslog file tracking-policy.log tracking-policy any
+set system syslog file user.log user any
+set system syslog file ztp.log ztp info
+set system am-pm-server ems server-ip 169.254.10.13/255.255.255.0
+set system am-pm-server ems-rdr server-ip 169.254.10.14/255.255.255.0
+set system am-pm-server lct server-ip 127.0.0.1/255.255.255.0
+set system cpe-type Neptune1800_1T_pe
+set system dp-option G1_23_PTP_Low
+set chassis cps slot csa cips-1t
+set chassis cps slot csb cips-1t
+set chassis ecb-unit ecb-1800
+set chassis fcu-unit fcu-1800
+set chassis mcp slot msa mcp-1800
+set chassis mcp slot msb mcp-1800
+set chassis powersupply slot psa inf-1800
+set chassis powersupply slot psb inf-1800
+set chassis slot ts11 data-card dhge-20 csfp-cage cage1 dual
+set chassis slot ts11 data-card dhge-20 port ge-ts11/2 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/3 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/4 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/5 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/6 enable
+set chassis tmu input-settings internal-timing-enable quality-sdh sec
+set interfaces ge-ts11/2 type vlan-tagged
+set interfaces ge-ts11/2 unit 1 family inet address 12.12.1.2/255.255.255.0
+set interfaces ge-ts11/2 unit 1 family mpls
+set interfaces ge-ts11/2 unit 1 family iso
+set interfaces ge-ts11/2 unit 1 vlan-id-list 1
+set interfaces ge-ts11/3 type vlan-tagged
+set interfaces ge-ts11/3 unit 1 family inet address 23.23.1.2/255.255.255.0
+set interfaces ge-ts11/3 unit 1 family mpls
+set interfaces ge-ts11/3 unit 1 family iso
+set interfaces ge-ts11/3 unit 1 vlan-id-list 1
+set interfaces ge-ts11/4 type vlan-tagged
+set interfaces ge-ts11/4 unit 1 family inet address 24.24.1.2/255.255.255.0
+set interfaces ge-ts11/4 unit 1 family mpls
+set interfaces ge-ts11/4 unit 1 family iso
+set interfaces ge-ts11/4 unit 1 vlan-id-list 1
+set interfaces ge-ts11/5 type vlan-tagged
+set interfaces ge-ts11/5 unit 1 family inet address 25.25.1.2/255.255.255.0
+set interfaces ge-ts11/5 unit 1 family mpls
+set interfaces ge-ts11/5 unit 1 family iso
+set interfaces ge-ts11/5 unit 1 vlan-id-list 1
+set interfaces ge-ts11/6 type vlan-tagged
+set interfaces ge-ts11/6 unit 1 family inet address 26.26.1.2/255.255.255.0
+set interfaces ge-ts11/6 unit 1 family mpls
+set interfaces ge-ts11/6 unit 1 family iso
+set interfaces ge-ts11/6 unit 1 vlan-id-list 1
+set interfaces lo0 unit 0 family inet address 2.2.2.2/255.255.255.255
+set interfaces lo0 unit 0 family iso
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/2.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/2.1 advertise-delay 100
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 advertise-delay 10
+set protocols isis protocol-instance 0 enable
+set protocols isis protocol-instance 0 system-id-host-name R2
+set protocols isis protocol-instance 0 segment-routing flex-algo 140 advertise FAD_IGP_140
+set protocols isis protocol-instance 0 segment-routing flex-algo 141
+set protocols isis protocol-instance 0 segment-routing flex-algo 142 advertise FAD_DELAY_142
+set protocols isis protocol-instance 0 traffic-engineering advertise-asla flex-algo
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 level 2 metric 100
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 level 2 te-metric 100
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface lo0.0 passive
+set protocols isis protocol-instance 0 interface lo0.0 level-type L2
+set protocols isis protocol-instance 0 iso-addressing area-address 34.0010
+set protocols isis protocol-instance 0 iso-addressing system-id 2222.2222.2222
+set protocols isis protocol-instance 0 fast-reroute-options enable
+set protocols isis protocol-instance 0 fast-reroute-options ti-lfa
+set protocols isis protocol-instance 0 level-type L2
+set protocols segment-routing flex-algo FAD_DELAY_142 metric-type Delay
+set protocols segment-routing flex-algo FAD_IGP_140 metric-type IGP
+set protocols segment-routing ipv4-adj-segment-mode both
+set protocols segment-routing ipv4-node-segments lo0.0 sid-value 222
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 140 sid-value 3140
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 141 sid-value 3141
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 142 sid-value 3142
+set switching-options switching-mode ip-mpls_pe
+set switching-options label-range-profile general-mpls-profile
+set routing-options inet-ecmp-disable
+set routing-options inet6-ecmp-disable
+set routing-options router-id 2.2.2.2
+set forwarding-options max-tx-l3vpn-labels 24k
+set forwarding-options max-tm-mc-groups-for-evpn-lifs 12288
+
+N3 
+set system syslog file kernel.log kernel any
+set system syslog file liveupdate.log live-update any
+set system syslog file prefix_trace_log.log path-trace any
+set system syslog file procman.log procman any
+set system syslog file shadetree.log shadetree any
+set system syslog file tracking-policy.log tracking-policy any
+set system syslog file user.log user any
+set system syslog file ztp.log ztp info
+set system am-pm-server ems server-ip 169.254.10.13/255.255.255.0
+set system am-pm-server ems-rdr server-ip 169.254.10.14/255.255.255.0
+set system am-pm-server lct server-ip 127.0.0.1/255.255.255.0
+set system cpe-type Neptune1800_1T_pe
+set system dp-option G1_23_PTP_Low
+set chassis cps slot csa cips-1t
+set chassis cps slot csb cips-1t
+set chassis ecb-unit ecb-1800
+set chassis fcu-unit fcu-1800
+set chassis mcp slot msa mcp-1800
+set chassis mcp slot msb mcp-1800
+set chassis powersupply slot psa inf-1800
+set chassis powersupply slot psb inf-1800
+set chassis slot ts11 data-card dhge-10 port ge-ts11/1 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/2 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/3 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/4 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/5 enable
+set chassis tmu input-settings internal-timing-enable quality-sdh sec
+set interfaces ge-ts11/1 type vlan-tagged
+set interfaces ge-ts11/1 unit 1 family inet address 13.13.1.3/255.255.255.0
+set interfaces ge-ts11/1 unit 1 family mpls
+set interfaces ge-ts11/1 unit 1 family iso
+set interfaces ge-ts11/1 unit 1 vlan-id-list 1
+set interfaces ge-ts11/2 type vlan-tagged
+set interfaces ge-ts11/2 unit 1 family inet address 23.23.1.3/255.255.255.0
+set interfaces ge-ts11/2 unit 1 family mpls
+set interfaces ge-ts11/2 unit 1 family iso
+set interfaces ge-ts11/2 unit 1 vlan-id-list 1
+set interfaces ge-ts11/3 type vlan-tagged
+set interfaces ge-ts11/3 unit 1 family inet address 36.36.1.3/255.255.255.0
+set interfaces ge-ts11/3 unit 1 family mpls
+set interfaces ge-ts11/3 unit 1 family iso
+set interfaces ge-ts11/3 unit 1 vlan-id-list 1
+set interfaces ge-ts11/4 type vlan-tagged
+set interfaces ge-ts11/4 unit 1 family inet address 34.34.1.3/255.255.255.0
+set interfaces ge-ts11/4 unit 1 family mpls
+set interfaces ge-ts11/4 unit 1 family iso
+set interfaces ge-ts11/4 unit 1 vlan-id-list 1
+set interfaces ge-ts11/5 type vlan-tagged
+set interfaces ge-ts11/5 unit 1 family inet address 35.35.1.3/255.255.255.0
+set interfaces ge-ts11/5 unit 1 family mpls
+set interfaces ge-ts11/5 unit 1 family iso
+set interfaces ge-ts11/5 unit 1 vlan-id-list 1
+set interfaces lo0 unit 0 family inet address 3.3.3.3/255.255.255.255
+set interfaces lo0 unit 0 family iso
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/2.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/2.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/4.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/4.1 advertise-delay 10
+set protocols isis protocol-instance 0 enable
+set protocols isis protocol-instance 0 system-id-host-name R3
+set protocols isis protocol-instance 0 segment-routing flex-algo 140 advertise FAD_IGP_140
+set protocols isis protocol-instance 0 segment-routing flex-algo 141 advertise FAD_TE_141
+set protocols isis protocol-instance 0 segment-routing flex-algo 142 advertise FAD_DELAY_142
+set protocols isis protocol-instance 0 traffic-engineering advertise-asla flex-algo
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/2.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface lo0.0 passive
+set protocols isis protocol-instance 0 interface lo0.0 level-type L2
+set protocols isis protocol-instance 0 iso-addressing area-address 34.0010
+set protocols isis protocol-instance 0 iso-addressing system-id 3333.3333.3333
+set protocols isis protocol-instance 0 fast-reroute-options enable
+set protocols isis protocol-instance 0 fast-reroute-options ti-lfa
+set protocols isis protocol-instance 0 level-type L2
+set protocols segment-routing flex-algo FAD_DELAY_142 priority 200
+set protocols segment-routing flex-algo FAD_DELAY_142 metric-type Delay
+set protocols segment-routing flex-algo FAD_IGP_140 priority 200
+set protocols segment-routing flex-algo FAD_IGP_140 metric-type IGP
+set protocols segment-routing flex-algo FAD_TE_141 metric-type TE
+set protocols segment-routing ipv4-adj-segment-mode both
+set protocols segment-routing ipv4-node-segments lo0.0 sid-value 333
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 140 sid-value 4140
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 141 sid-value 4141
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 142 sid-value 4142
+set switching-options switching-mode ip-mpls_pe
+set switching-options label-range-profile general-mpls-profile
+set routing-options inet-ecmp-disable
+set routing-options inet6-ecmp-disable
+set routing-options router-id 3.3.3.3
+set forwarding-options max-tx-l3vpn-labels 24k
+set forwarding-options max-tm-mc-groups-for-evpn-lifs 12288
+
+N4
+set system syslog file firewall.log firewall any
+set system syslog file interactive-commands.log interactive-commands any
+set system syslog file kernel.log kernel any
+set system syslog file liveupdate.log live-update any
+set system syslog file prefix_trace_log.log path-trace any
+set system syslog file procman.log procman any
+set system syslog file shadetree.log shadetree any
+set system syslog file tracking-policy.log tracking-policy any
+set system syslog file user.log user any
+set system syslog file ztp.log ztp info
+set system am-pm-server ems server-ip 169.254.10.13/255.255.255.0
+set system am-pm-server ems-rdr server-ip 169.254.10.14/255.255.255.0
+set system am-pm-server lct server-ip 127.0.0.1/255.255.255.0
+set system cpe-type Neptune1800_1T_pe
+set system dp-option G1_23_PTP_Low
+set chassis cps slot csa cips-1t
+set chassis cps slot csb cips-1t
+set chassis ecb-unit ecb-1800
+set chassis fcu-unit fcu-1800
+set chassis mcp slot msa mcp-1800
+set chassis mcp slot msb mcp-1800
+set chassis powersupply slot psa inf-1800
+set chassis powersupply slot psb inf-1800
+set chassis slot ts11 data-card dhge-10 csfp-cage cage1 dual
+set chassis slot ts11 data-card dhge-10 port ge-ts11/1 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/2 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/3 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/5 enable
+set chassis slot ts11 data-card dhge-10 port ge-ts11/6 enable
+set chassis tmu input-settings internal-timing-enable quality-sdh sec
+set interfaces ge-ts11/1 type vlan-tagged
+set interfaces ge-ts11/1 unit 1 family inet address 14.14.1.4/255.255.255.0
+set interfaces ge-ts11/1 unit 1 family mpls
+set interfaces ge-ts11/1 unit 1 family iso
+set interfaces ge-ts11/1 unit 1 vlan-id-list 1
+set interfaces ge-ts11/2 type vlan-tagged
+set interfaces ge-ts11/2 unit 1 family inet address 24.24.1.4/255.255.255.0
+set interfaces ge-ts11/2 unit 1 family mpls
+set interfaces ge-ts11/2 unit 1 family iso
+set interfaces ge-ts11/2 unit 1 vlan-id-list 1
+set interfaces ge-ts11/3 type vlan-tagged
+set interfaces ge-ts11/3 unit 1 family inet address 34.34.1.4/255.255.255.0
+set interfaces ge-ts11/3 unit 1 family mpls
+set interfaces ge-ts11/3 unit 1 family iso
+set interfaces ge-ts11/3 unit 1 vlan-id-list 1
+set interfaces ge-ts11/5 type vlan-tagged
+set interfaces ge-ts11/5 unit 1 family inet address 45.45.1.4/255.255.255.0
+set interfaces ge-ts11/5 unit 1 family mpls
+set interfaces ge-ts11/5 unit 1 family iso
+set interfaces ge-ts11/5 unit 1 vlan-id-list 1
+set interfaces ge-ts11/6 type vlan-tagged
+set interfaces ge-ts11/6 unit 1 family inet address 46.46.1.4/255.255.255.0
+set interfaces ge-ts11/6 unit 1 family mpls
+set interfaces ge-ts11/6 unit 1 family iso
+set interfaces ge-ts11/6 unit 1 vlan-id-list 1
+set interfaces lo0 unit 0 family inet address 4.4.4.4/255.255.255.255
+set interfaces lo0 unit 0 family iso
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/3.1 advertise-delay 20
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/6.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/6.1 advertise-delay 10
+set protocols isis protocol-instance 0 enable
+set protocols isis protocol-instance 0 system-id-host-name R4
+set protocols isis protocol-instance 0 segment-routing flex-algo 140
+set protocols isis protocol-instance 0 segment-routing flex-algo 141 advertise FAD_TE_141
+set protocols isis protocol-instance 0 segment-routing flex-algo 142 advertise FAD_DELAY_142
+set protocols isis protocol-instance 0 traffic-engineering advertise-asla flex-algo
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 metric 20
+set protocols isis protocol-instance 0 interface ge-ts11/3.1 level 2 te-metric 20
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface lo0.0 passive
+set protocols isis protocol-instance 0 interface lo0.0 level-type L2
+set protocols isis protocol-instance 0 iso-addressing area-address 34.0010
+set protocols isis protocol-instance 0 iso-addressing system-id 4444.4444.4444
+set protocols isis protocol-instance 0 fast-reroute-options enable
+set protocols isis protocol-instance 0 fast-reroute-options ti-lfa
+set protocols isis protocol-instance 0 level-type L2
+set protocols segment-routing flex-algo FAD_DELAY_142 metric-type Delay
+set protocols segment-routing flex-algo FAD_TE_141 priority 200
+set protocols segment-routing flex-algo FAD_TE_141 metric-type TE
+set protocols segment-routing ipv4-adj-segment-mode both
+set protocols segment-routing ipv4-adj-segments interface ge-ts11/5.1 protected-sid-value 640000
+set protocols segment-routing ipv4-adj-segments interface ge-ts11/5.1 unprotected-sid-value 640001
+set protocols segment-routing ipv4-node-segments lo0.0 sid-value 444
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 140 sid-value 2140
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 141 sid-value 2141
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 142 sid-value 2142
+set switching-options switching-mode ip-mpls_pe
+set switching-options label-range-profile general-mpls-profile
+set routing-options inet-ecmp-disable
+set routing-options inet6-ecmp-disable
+set routing-options router-id 4.4.4.4
+set forwarding-options max-tx-l3vpn-labels 24k
+set forwarding-options max-tm-mc-groups-for-evpn-lifs 12288
+
+N6 
+set system dp-option G1_23_PTP_Low
+set chassis cps slot csa cips-1t
+set chassis cps slot csb cips-1t
+set chassis ecb-unit ecb-1800
+set chassis fcu-unit fcu-1800
+set chassis mcp slot msa mcp-1800
+set chassis mcp slot msb mcp-1800
+set chassis powersupply slot psa inf-1800
+set chassis powersupply slot psb inf-1800
+set chassis slot ts11 data-card dhge-20 csfp-cage cage1 dual
+set chassis slot ts11 data-card dhge-20 port ge-ts11/1 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/2 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/4 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/5 enable
+set chassis slot ts11 data-card dhge-20 port ge-ts11/6 enable
+set chassis tmu input-settings internal-timing-enable quality-sdh sec
+set interfaces ge-ts11/1 type vlan-tagged
+set interfaces ge-ts11/1 unit 1 family inet address 16.16.1.6/255.255.255.0
+set interfaces ge-ts11/1 unit 1 family mpls
+set interfaces ge-ts11/1 unit 1 family iso
+set interfaces ge-ts11/1 unit 1 vlan-id-list 1
+set interfaces ge-ts11/2 type vlan-tagged
+set interfaces ge-ts11/2 unit 1 family inet address 26.26.1.6/255.255.255.0
+set interfaces ge-ts11/2 unit 1 family mpls
+set interfaces ge-ts11/2 unit 1 family iso
+set interfaces ge-ts11/2 unit 1 vlan-id-list 1
+set interfaces ge-ts11/4 type vlan-tagged
+set interfaces ge-ts11/4 unit 1 family inet address 46.46.1.6/255.255.255.0
+set interfaces ge-ts11/4 unit 1 family mpls
+set interfaces ge-ts11/4 unit 1 family iso
+set interfaces ge-ts11/4 unit 1 vlan-id-list 1
+set interfaces ge-ts11/5 type vlan-tagged
+set interfaces ge-ts11/5 unit 1 family inet address 56.56.1.6/255.255.255.0
+set interfaces ge-ts11/5 unit 1 family mpls
+set interfaces ge-ts11/5 unit 1 family iso
+set interfaces ge-ts11/5 unit 1 vlan-id-list 1
+set interfaces ge-ts11/6 type vlan-tagged
+set interfaces ge-ts11/6 unit 1 family inet address 36.36.1.6/255.255.255.0
+set interfaces ge-ts11/6 unit 1 family mpls
+set interfaces ge-ts11/6 unit 1 family iso
+set interfaces ge-ts11/6 unit 1 vlan-id-list 1
+set interfaces lo0 unit 0 family inet address 6.6.6.6/255.255.255.255
+set interfaces lo0 unit 0 family iso
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/1.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/4.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/4.1 advertise-delay 10
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/6.1 enable
+set protocols mpls performance-measurement delay-measurement interface ge-ts11/6.1 advertise-delay 20
+set protocols isis protocol-instance 0 enable
+set protocols isis protocol-instance 0 system-id-host-name R6
+set protocols isis protocol-instance 0 segment-routing flex-algo 140 advertise FAD_IGP_140
+set protocols isis protocol-instance 0 segment-routing flex-algo 141 advertise FAD_TE_141
+set protocols isis protocol-instance 0 segment-routing flex-algo 142 advertise FAD_DELAY_142
+set protocols isis protocol-instance 0 traffic-engineering advertise-asla flex-algo
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/1.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level 2 metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/4.1 level 2 te-metric 10
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 emulate-ptp
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level-type L2
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level 2 metric 20
+set protocols isis protocol-instance 0 interface ge-ts11/6.1 level 2 te-metric 20
+set protocols isis protocol-instance 0 interface lo0.0 passive
+set protocols isis protocol-instance 0 interface lo0.0 level-type L2
+set protocols isis protocol-instance 0 iso-addressing area-address 34.0010
+set protocols isis protocol-instance 0 iso-addressing system-id 6666.6666.6666
+set protocols isis protocol-instance 0 fast-reroute-options enable
+set protocols isis protocol-instance 0 fast-reroute-options ti-lfa
+set protocols isis protocol-instance 0 level-type L2
+set protocols segment-routing flex-algo FAD_DELAY_142 metric-type Delay
+set protocols segment-routing flex-algo FAD_IGP_140 metric-type IGP
+set protocols segment-routing flex-algo FAD_TE_141 metric-type TE
+set protocols segment-routing ipv4-adj-segment-mode both
+set protocols segment-routing ipv4-node-segments lo0.0 sid-value 666
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 140 sid-value 5140
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 141 sid-value 5141
+set protocols segment-routing ipv4-node-segments lo0.0 algorithm 142 sid-value 5142
+set switching-options switching-mode ip-mpls_pe
+set switching-options label-range-profile general-mpls-profile
+set routing-options inet-ecmp-disable
+set routing-options inet6-ecmp-disable
+set routing-options router-id 6.6.6.6
+set forwarding-options max-tx-l3vpn-labels 24k
+set forwarding-options max-tm-mc-groups-for-evpn-lifs 12288
+
