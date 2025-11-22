@@ -1,4 +1,5 @@
 import React from 'react';
+import { Network, Router, Activity } from 'lucide-react';
 
 interface NetOptixProps {
     onBack: () => void;
@@ -138,6 +139,145 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                             BFD configured = 10*3
                                         </li>
                                     </ul>
+                                </div>
+
+                                {/* UX Research Cards Section */}
+                                <div className="space-y-6">
+                                    <h3 className="text-2xl font-serif font-medium text-slate-800">UX Research: Topology Cards</h3>
+                                    <p className="text-slate-600 leading-relaxed">
+                                        Inspired by modern dashboard aesthetics, I designed card-based topology previews to give network operators a quick health summary before drilling down.
+                                    </p>
+
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                        {/* Card 1: TechnoCore */}
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="flex gap-3 items-center">
+                                                    <div className="p-2 bg-slate-50 rounded-lg text-slate-400">
+                                                        <Network size={20} />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-slate-700 text-sm">TechnoCore</h4>
+                                                        <span className="text-xs text-slate-400">Deployment</span>
+                                                    </div>
+                                                </div>
+                                                <div className="text-slate-300">•••</div>
+                                            </div>
+
+                                            {/* Mini Topology */}
+                                            <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
+                                                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center z-10"><Router size={14} /></div>
+                                                <div className="w-12 h-0.5 bg-slate-200 absolute"></div>
+                                                <div className="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center z-10"><Activity size={14} /></div>
+                                                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
+                                            </div>
+
+                                            <div className="grid grid-cols-3 gap-2 text-center mb-6">
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">10</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Security</div>
+                                                </div>
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">16</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Switching</div>
+                                                </div>
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">4</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">SD-WAN</div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-emerald-600 bg-emerald-50 py-2 rounded-lg">
+                                                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                                51 Sites Synced
+                                            </div>
+                                        </div>
+
+                                        {/* Card 2: Hyperion */}
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="flex gap-3 items-center">
+                                                    <div className="p-2 bg-slate-50 rounded-lg text-slate-400">
+                                                        <Network size={20} />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-slate-700 text-sm">Hyperion</h4>
+                                                        <span className="text-xs text-slate-400">WorldWeb</span>
+                                                    </div>
+                                                </div>
+                                                <div className="px-2 py-0.5 bg-orange-100 text-orange-600 text-[10px] font-bold rounded uppercase">Updated</div>
+                                            </div>
+
+                                            {/* Mini Topology */}
+                                            <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
+                                                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center z-10"><Router size={14} /></div>
+                                                <div className="w-12 h-0.5 bg-slate-200 absolute"></div>
+                                                <div className="w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center z-10"><Activity size={14} /></div>
+                                                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
+                                            </div>
+
+                                            <div className="grid grid-cols-3 gap-2 text-center mb-6">
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">1</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Security</div>
+                                                </div>
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">2</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Switching</div>
+                                                </div>
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">3</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">SD-WAN</div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-red-500 bg-red-50 py-2 rounded-lg">
+                                                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                                                145 Sites Out-of-Sync
+                                            </div>
+                                        </div>
+
+                                        {/* Card 3: Hegemony */}
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                            <div className="flex justify-between items-start mb-6">
+                                                <div className="flex gap-3 items-center">
+                                                    <div className="p-2 bg-slate-50 rounded-lg text-slate-400">
+                                                        <Network size={20} />
+                                                    </div>
+                                                    <div>
+                                                        <h4 className="font-semibold text-slate-700 text-sm">Hegemony</h4>
+                                                        <span className="text-xs text-slate-400">Colony Sites</span>
+                                                    </div>
+                                                </div>
+                                                <div className="px-2 py-0.5 bg-emerald-100 text-emerald-600 text-[10px] font-bold rounded uppercase">New</div>
+                                            </div>
+
+                                            {/* Mini Topology */}
+                                            <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
+                                                <div className="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center z-10 shadow-sm border-4 border-white"><Activity size={24} /></div>
+                                            </div>
+
+                                            <div className="grid grid-cols-3 gap-2 text-center mb-6">
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">19</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Security</div>
+                                                </div>
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">8</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Switching</div>
+                                                </div>
+                                                <div>
+                                                    <div className="text-lg font-bold text-slate-700">12</div>
+                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">SD-WAN</div>
+                                                </div>
+                                            </div>
+
+                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-purple-600 bg-purple-50 py-2 rounded-lg">
+                                                <div className="w-2 h-2 bg-purple-500 rounded-full animate-spin"></div>
+                                                79 Sites Syncing
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <p className="text-xl leading-relaxed text-gray-700">
                                     I approached this not just as a dashboard, but as a translation layer. I applied Shneiderman’s Mantra of interaction design: "Overview first, zoom and filter, then details-on-demand."
