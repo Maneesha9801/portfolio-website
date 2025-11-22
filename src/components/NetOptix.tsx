@@ -61,7 +61,7 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                     <section className="mb-20">
                         <div className="bg-gray-900 rounded-2xl overflow-hidden shadow-2xl border border-gray-800">
                             <img
-                                src={`${import.meta.env.BASE_URL}netoptix-demo.webp`}
+                                src={`${import.meta.env.BASE_URL}netoptix-demo.png`}
                                 alt="NetOptix Dashboard Demo"
                                 className="w-full h-auto"
                             />
