@@ -44,12 +44,12 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                         </div>
                         <div>
                             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">Timeline</h3>
-                            <p className="text-lg">3 Days (Prototype)</p>
+                            <p className="text-lg">2 Day Ribbon Technothon</p>
                         </div>
                         <div>
                             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">Tech Stack</h3>
                             <div className="flex flex-wrap gap-2">
-                                {['HTML5 Canvas', 'Vanilla JS', 'CSS3', 'MPLS Simulation'].map(tech => (
+                                {['C/C++', 'React', 'OSI Model Layer', 'MPLS', 'Layer 2', 'Layer 3 Networks'].map(tech => (
                                     <span key={tech} className="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">
                                         {tech}
                                     </span>
@@ -72,7 +72,10 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                 Live topology visualization with real-time traffic health indicators.
                             </p>
                             <p className="text-xs text-gray-400">
-                                Source: Live Interactive Simulation
+                                Source: Live Interactive Simulation | <a href="https://github.com/Maneesha9801/netoptix" target="_blank" rel="noopener noreferrer" className="hover:text-black underline">View on GitHub</a>
+                            </p>
+                            <p className="text-xs text-gray-400 mt-1">
+                                Note: The actual working product mentioned is currently being used in the company as a debugging tool.
                             </p>
                         </div>
                     </section>
@@ -284,9 +287,7 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                         </div>
                                     </div>
                                 </div>
-                                <p className="text-xl leading-relaxed text-[#5d5d5d]">
-                                    I approached this not just as a dashboard, but as a translation layer. I applied Shneiderman’s Mantra of interaction design: "Overview first, zoom and filter, then details-on-demand."
-                                </p>
+
 
                                 <div className="space-y-12">
                                     <h2 className="text-3xl font-serif text-[#7b8064] mb-8">2. The Approach: Cognitive Ergonomics</h2>
