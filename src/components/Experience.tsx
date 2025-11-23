@@ -18,7 +18,7 @@ export const Experience: React.FC = () => {
             role: 'UI Intern',
             company: 'PrimeOman Oman',
             period: 'Nov 2021 – Dec 2021',
-            description: '• Collaborated with designers to launch a COVID-19 relief web platform under tight deadlines.\n• Translated high-fidelity wireframes into reactive UI components, ensuring accessibility standards and responsive design.'
+            description: 'Collaborated with designers to launch a COVID-19 relief web platform under tight deadlines.\n Translated high-fidelity wireframes into reactive UI components, ensuring accessibility standards and responsive design.'
         }
     ];
 

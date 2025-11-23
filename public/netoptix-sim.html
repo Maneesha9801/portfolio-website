@@ -356,7 +356,7 @@
                 <span style="font-size: 12px; opacity: 0.5;">✥</span>
             </div>
             <div class="legend-item">
-                <div class="dot" style="background: #C3C7A6;"></div>Standard Traffic (Best Path)
+                <div class="dot" style="background: #4A7A4A;"></div>Standard Traffic (Best Path)
             </div>
             <div class="legend-item">
                 <div class="dot" style="background: #9ab0d6;"></div>Flex Algo 130 (Priority)
@@ -364,7 +364,7 @@
             <div class="legend-item">
                 <div class="dot" style="background: #F1F0C8; border: 1px solid #bbb;"></div>Access Traffic (TEQ9-CE)
             </div>
-            <div style="margin-top:8px; border-top: 1px solid #C3C7A6; padding-top:5px;">
+            <div style="margin-top:8px; border-top: 1px solid #4A7A4A; padding-top:5px;">
                 <div class="legend-item"><span
                         style="border-bottom: 4px solid #D7C59F; width: 20px; display:inline-block; margin-right:8px;"></span>Congested
                     Link</div>
@@ -396,7 +396,7 @@
                         <tr>
                             <td><strong>128</strong></td>
                             <td><span class="dot"
-                                    style="background:#C3C7A6; display:inline-block; vertical-align:middle;"></span>Green
+                                    style="background:#4A7A4A; display:inline-block; vertical-align:middle;"></span>Green
                             </td>
                             <td><strong>SPF (Metric)</strong>: Standard IGP Cost</td>
                             <td>CE &rarr; N2 &rarr; N5 &rarr; N7</td>
@@ -850,7 +850,7 @@
 
             if (Math.random() < 0.02 * spawnRateMultiplier) {
                 // Standard Traffic (Best Path) - Green
-                packets.push(new Packet(paths['shortest'], 'shortest', '#C3C7A6', 2.8));
+                packets.push(new Packet(paths['shortest'], 'shortest', '#4A7A4A', 2.8));
             }
             if (Math.random() < 0.04 * spawnRateMultiplier) {
                 let p = isPeakHour ? ['Teq9', 'CE', 'N1', 'N5'] : ['Teq9', 'CE'];
@@ -878,7 +878,7 @@
             ctx.globalAlpha = 1.0;
 
             ctx.font = '14px sans-serif';
-            ctx.fillStyle = '#C3C7A6';
+            ctx.fillStyle = '#4A7A4A';
             ctx.fillText("ISIS Level 2 Area", width * 0.2, height * 0.1);
             ctx.fillText("ISIS Level 1 Area", width * 0.75, height * 0.1);
 
