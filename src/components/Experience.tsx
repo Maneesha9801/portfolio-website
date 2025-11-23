@@ -4,21 +4,21 @@ export const Experience: React.FC = () => {
     const experiences = [
         {
             role: 'Senior Technical Analyst',
-            company: 'Network Systems Inc.',
+            company: 'Ribbon Communications',
             period: '2023 - Present',
             description: 'I design next-generation L2/L3 network systems in the MPLS domain, helping build resilient, high-performance infrastructures that keep global communication running seamlessly.'
         },
         {
             role: 'Design Head',
             company: 'Literary & Debating Club (NIT Calicut)',
-            period: '2020 - 2021',
+            period: '2020 - 2022',
             description: 'I directed visual strategy for large-scale initiatives like mental health week, and pride week; engaging over 3,000 students. Pioneered "Humans of NIT Calicut," a digital storytelling campaign that blended visual design and illustration to foster community connection.'
         },
         {
-            role: 'Design Intern',
-            company: 'Digital Arts Studio',
-            period: 'Summer 2018',
-            description: 'Supported the design team in various projects, gaining hands-on experience in web and app interface design.'
+            role: 'UI Intern',
+            company: 'PrimeOman Oman',
+            period: 'Nov 2021 – Dec 2021',
+            description: '• Collaborated with designers to launch a COVID-19 relief web platform under tight deadlines.\n• Translated high-fidelity wireframes into reactive UI components, ensuring accessibility standards and responsive design.'
         }
     ];
 
