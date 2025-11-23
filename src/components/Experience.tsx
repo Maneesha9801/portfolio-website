@@ -9,10 +9,10 @@ export const Experience: React.FC = () => {
             description: 'I design next-generation L2/L3 network systems in the MPLS domain, helping build resilient, high-performance infrastructures that keep global communication running seamlessly.'
         },
         {
-            role: 'Junior Graphic Designer',
-            company: 'Branding Inc.',
-            period: '2019 - 2021',
-            description: 'I assisted in the design and execution of branding packages for new businesses, focusing on logo creation, brand identity, and the development of marketing materials.'
+            role: 'Design Head',
+            company: 'Literary & Debating Club (NIT Calicut)',
+            period: '2020 - 2021',
+            description: 'I directed visual strategy for large-scale initiatives like mental health week, and pride week; engaging over 3,000 students. Pioneered "Humans of NIT Calicut," a digital storytelling campaign that blended visual design and illustration to foster community connection.'
         },
         {
             role: 'Design Intern',
