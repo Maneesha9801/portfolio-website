@@ -153,6 +153,54 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                     </ul>
                                 </div>
 
+                                {/* Backend Engineering Section */}
+                                <div className="space-y-6">
+                                    <h3 className="text-2xl font-serif font-medium text-[#7b8064]">Backend Engineering: Data Ingestion</h3>
+                                    <div className="space-y-4">
+                                        <p className="text-[#5d5d5d] leading-relaxed">
+                                            <strong>The Challenge:</strong> Network devices output unstructured, raw text. To visualize it, I needed to convert thousands of lines of legacy CLI output into structured JSON data in real-time.
+                                        </p>
+                                        <p className="text-[#5d5d5d] leading-relaxed">
+                                            <strong>The Solution:</strong> I leveraged Perl for its superior text-processing speed and regular expression (Regex) capabilities—standard for legacy network automation.
+                                        </p>
+                                        <div className="bg-[#f9fdf5] p-6 rounded-xl border border-[#C3C7A6]">
+                                            <h4 className="font-bold text-[#7b8064] mb-2">How it works:</h4>
+                                            <ol className="list-decimal list-inside space-y-2 text-sm text-[#5d5d5d] font-mono">
+                                                <li><strong>Ingestion:</strong> The script SSHs into the node, or parses compressed .zstf log files and captures live streams (e.g., show isis neighbors detail).</li>
+                                                <li><strong>Regex Extraction:</strong> I wrote custom Regex patterns to scrape key data points: Neighbor IDs, Interface Metrics, and Link States directly from the raw ASCII stream.</li>
+                                                <li><strong>State Machine Logic:</strong> The script maintains a 'state' of the network, maintaining 'flapping' links before sending the clean JSON object to the frontend.</li>
+                                            </ol>
+                                        </div>
+
+                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] bg-[#1e1e1e] shadow-sm mt-4">
+                                            <div className="flex items-center px-4 py-2 bg-[#2d2d2d] border-b border-[#3d3d3d]">
+                                                <div className="flex gap-2">
+                                                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                                    <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                                </div>
+                                                <span className="ml-4 text-xs text-gray-400 font-mono">regex.pl</span>
+                                            </div>
+                                            <div className="p-4 overflow-x-auto">
+                                                <pre className="text-xs font-mono text-gray-300 leading-relaxed">
+                                                    {`# Regex to capture ISIS Neighbor details (SystemID, Interface, State, Metric)
+# Example Log: "L2  N1_Router  ge-1/0/0  Up  30  ..."
+my $isis_regex = qr/^(L[12])\\s+([a-zA-Z0-9_-]+)\\s+(ge-[0-9\\/]+)\\s+(Up|Down|Init)\\s+(\\d+)/;
+
+# State Machine: Check for Flapping Links
+if (exists $network_state{$link_key}) {
+    # If status changed too quickly, flag as 'FLAPPING'
+    if ($status ne $last_status && ($current_time - $last_update) < $FLAP_THRESHOLD) {
+        $network_state{$link_key}->{'condition'} = 'CRITICAL_FLAP';
+        return; # Suppress noise
+    }
+}`}
+                                                </pre>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {/* UX Research Cards Section - REPLACED WITH DASHBOARD */}
                                 <div className="space-y-6">
                                     <h3 className="text-2xl font-serif font-medium text-[#7b8064]">UX Research: Dashboard Design</h3>
