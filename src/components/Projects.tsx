@@ -1,11 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Card } from './ui/Card';
 
 interface ProjectsProps {
-    onProjectClick: (projectId: string) => void;
+    // onProjectClick prop is no longer needed
 }
 
-export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
+export const Projects: React.FC<ProjectsProps> = () => {
     const projects = [
         {
             id: 'netoptix',
@@ -53,7 +54,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project) => (
-                        <div key={project.id} onClick={() => onProjectClick(project.id)}>
+                        <Link to={`/${project.id}`} key={project.id} className="block h-full">
                             <Card className="group cursor-pointer overflow-hidden p-0 border-2 border-transparent hover:border-black transition-all duration-300 h-full bg-white hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1">
                                 <div className="aspect-[4/3] overflow-hidden bg-gray-100 relative">
                                     <img
@@ -69,7 +70,7 @@ export const Projects: React.FC<ProjectsProps> = ({ onProjectClick }) => {
                                     <p className="text-gray-600 text-sm line-clamp-2">{project.description}</p>
                                 </div>
                             </Card>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

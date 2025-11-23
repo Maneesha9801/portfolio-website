@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useEffect } from 'react';
+import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
@@ -8,37 +9,43 @@ import { Footer } from './components/Footer';
 import { EmoteGAN } from './components/EmoteGAN';
 import { NetOptix } from './components/NetOptix';
 
-function App() {
-  const [currentView, setCurrentView] = useState<'home' | 'emotegan' | 'netoptix'>('home');
+function ScrollToTop() {
+  const { pathname } = useLocation();
 
-  if (currentView === 'emotegan') {
-    return <EmoteGAN onBack={() => {
-      setCurrentView('home');
-      window.scrollTo(0, 0);
-    }} />;
-  }
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
-  if (currentView === 'netoptix') {
-    return <NetOptix onBack={() => {
-      setCurrentView('home');
-      window.scrollTo(0, 0);
-    }} />;
-  }
+  return null;
+}
 
+function Home() {
   return (
-    <div className="min-h-screen bg-paper text-black font-sans selection:bg-accent-yellow selection:text-black">
+    <>
       <Header />
       <main>
         <Hero />
-        <Projects onProjectClick={(id) => {
-          if (id === 'emotegan') setCurrentView('emotegan');
-          if (id === 'netoptix') setCurrentView('netoptix');
-        }} />
+        <Projects />
         <Experience />
         <About />
       </main>
       <Footer />
-    </div>
+    </>
+  );
+}
+
+function App() {
+  return (
+    <Router>
+      <div className="min-h-screen bg-paper text-black font-sans selection:bg-accent-yellow selection:text-black">
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/netoptix" element={<NetOptix onBack={() => { }} />} />
+          <Route path="/emotegan" element={<EmoteGAN onBack={() => { }} />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

@@ -1,20 +1,21 @@
 import React from 'react';
-import { Network, Router, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { NetOptixDashboard } from './NetOptixDashboard';
 
 interface NetOptixProps {
-    onBack: () => void;
+    onBack?: () => void;
 }
 
-export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
+export const NetOptix: React.FC<NetOptixProps> = () => {
     return (
         <div className="min-h-screen bg-paper animate-fade-in-up selection:bg-accent-yellow selection:text-black">
             {/* Navigation */}
             <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <button onClick={onBack} className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group">
+                    <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group">
                         <span className="group-hover:-translate-x-1 transition-transform">←</span>
                         Back to Portfolio
-                    </button>
+                    </Link>
                     <span className="font-serif font-bold text-xl">NetOptix</span>
                 </div>
             </nav>
@@ -60,11 +61,12 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
 
                     {/* Project Demo */}
                     <section className="mb-20">
-                        <div className="rounded-2xl overflow-hidden bg-white max-w-4xl mx-auto h-[600px]">
+                        <h2 className="text-3xl font-serif text-center mb-8">Interactive Simulator</h2>
+                        <div className="rounded-2xl overflow-hidden bg-white max-w-4xl mx-auto h-[600px] p-4 border border-gray-100 shadow-sm">
                             <iframe
                                 src={`${import.meta.env.BASE_URL}netoptix-sim.html`}
                                 title="NetOptix Simulation"
-                                className="w-full h-full border-0"
+                                className="w-full h-full border-0 rounded-xl"
                             />
                         </div>
                         <div className="flex flex-col items-center mt-4 gap-2">
@@ -111,9 +113,18 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold mb-2">The Design Challenge</h3>
-                                    <p className="text-lg text-gray-600">
+                                    <p className="text-lg text-gray-600 mb-8">
                                         How might we transform network debugging from a task of reading and memorizing into a task of seeing and reacting?
                                     </p>
+
+                                    <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
+                                        <img
+                                            src={`${import.meta.env.BASE_URL}netoptix-prototype-ideation.jpg`}
+                                            alt="Prototype Ideation Framework"
+                                            className="w-full h-auto"
+                                        />
+                                        <p className="text-xs text-gray-500 p-3 bg-gray-50 text-center border-t border-gray-200">Initial Prototype Ideation & Framework Sketch</p>
+                                    </div>
                                 </div>
                             </div>
                         </section>
@@ -149,143 +160,14 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                     </ul>
                                 </div>
 
-                                {/* UX Research Cards Section */}
+                                {/* UX Research Cards Section - REPLACED WITH DASHBOARD */}
                                 <div className="space-y-6">
-                                    <h3 className="text-2xl font-serif font-medium text-[#7b8064]">UX Research: Topology Cards</h3>
+                                    <h3 className="text-2xl font-serif font-medium text-[#7b8064]">UX Research: Dashboard Design</h3>
                                     <p className="text-[#5d5d5d] leading-relaxed">
-                                        I also designed a UI framework for network operators to always get a quick health summary of the topology based on the terminal logs, that will be updated on a live basis.
+                                        I designed a UI framework for network operators to always get a quick health summary of the topology based on the terminal logs, that will be updated on a live basis.
                                     </p>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#EEF1DE] p-6 rounded-2xl border border-[#C3C7A6]">
-                                        {/* Card 1: TechnoCore */}
-                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-[#D9E4E0] hover:shadow-md transition-shadow">
-                                            <div className="flex justify-between items-start mb-6">
-                                                <div className="flex gap-3 items-center">
-                                                    <div className="p-2 bg-[#EEF1DE] rounded-lg text-[#7b8064]">
-                                                        <Network size={20} />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-[#5d5d5d] text-sm">TechnoCore</h4>
-                                                        <span className="text-xs text-[#888]">Deployment</span>
-                                                    </div>
-                                                </div>
-                                                <div className="text-[#C3C7A6]">•••</div>
-                                            </div>
-
-                                            {/* Mini Topology */}
-                                            <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
-                                                <div className="w-8 h-8 rounded-full bg-[#E9ECCF] text-[#7b8064] flex items-center justify-center z-10"><Router size={14} /></div>
-                                                <div className="w-12 h-0.5 bg-[#D9E4E0] absolute"></div>
-                                                <div className="w-8 h-8 rounded-full bg-[#F1F0C8] text-[#D7C59F] flex items-center justify-center z-10"><Activity size={14} /></div>
-                                                <div className="w-8 h-8 rounded-full bg-[#D9E4E0] text-[#5d5d5d] flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
-                                            </div>
-
-                                            <div className="grid grid-cols-3 gap-2 text-center mb-6">
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">10</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Security</div>
-                                                </div>
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">16</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Switching</div>
-                                                </div>
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">4</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">SD-WAN</div>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#7b8064] bg-[#E9ECCF] py-2 rounded-lg">
-                                                <div className="w-2 h-2 bg-[#7b8064] rounded-full"></div>
-                                                51 Sites Synced
-                                            </div>
-                                        </div>
-
-                                        {/* Card 2: Hyperion */}
-                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-[#D9E4E0] hover:shadow-md transition-shadow">
-                                            <div className="flex justify-between items-start mb-6">
-                                                <div className="flex gap-3 items-center">
-                                                    <div className="p-2 bg-[#EEF1DE] rounded-lg text-[#7b8064]">
-                                                        <Network size={20} />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-[#5d5d5d] text-sm">Hyperion</h4>
-                                                        <span className="text-xs text-[#888]">WorldWeb</span>
-                                                    </div>
-                                                </div>
-                                                <div className="px-2 py-0.5 bg-[#F1F0C8] text-[#D7C59F] text-[10px] font-bold rounded uppercase">Updated</div>
-                                            </div>
-
-                                            {/* Mini Topology */}
-                                            <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
-                                                <div className="w-8 h-8 rounded-full bg-[#E9ECCF] text-[#7b8064] flex items-center justify-center z-10"><Router size={14} /></div>
-                                                <div className="w-12 h-0.5 bg-[#D9E4E0] absolute"></div>
-                                                <div className="w-8 h-8 rounded-full bg-[#D7C59F] text-white flex items-center justify-center z-10"><Activity size={14} /></div>
-                                                <div className="w-8 h-8 rounded-full bg-[#D9E4E0] text-[#5d5d5d] flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
-                                            </div>
-
-                                            <div className="grid grid-cols-3 gap-2 text-center mb-6">
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">1</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Security</div>
-                                                </div>
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">2</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Switching</div>
-                                                </div>
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">3</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">SD-WAN</div>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#D7C59F] bg-[#F1F0C8] py-2 rounded-lg">
-                                                <div className="w-2 h-2 bg-[#D7C59F] rounded-full animate-pulse"></div>
-                                                145 Sites Out-of-Sync
-                                            </div>
-                                        </div>
-
-                                        {/* Card 3: Hegemony */}
-                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-[#D9E4E0] hover:shadow-md transition-shadow">
-                                            <div className="flex justify-between items-start mb-6">
-                                                <div className="flex gap-3 items-center">
-                                                    <div className="p-2 bg-[#EEF1DE] rounded-lg text-[#7b8064]">
-                                                        <Network size={20} />
-                                                    </div>
-                                                    <div>
-                                                        <h4 className="font-semibold text-[#5d5d5d] text-sm">Hegemony</h4>
-                                                        <span className="text-xs text-[#888]">Colony Sites</span>
-                                                    </div>
-                                                </div>
-                                                <div className="px-2 py-0.5 bg-[#E9ECCF] text-[#7b8064] text-[10px] font-bold rounded uppercase">New</div>
-                                            </div>
-
-                                            {/* Mini Topology */}
-                                            <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
-                                                <div className="w-12 h-12 rounded-full bg-[#F1F0C8] text-[#D7C59F] flex items-center justify-center z-10 shadow-sm border-4 border-white"><Activity size={24} /></div>
-                                            </div>
-
-                                            <div className="grid grid-cols-3 gap-2 text-center mb-6">
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">19</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Security</div>
-                                                </div>
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">8</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Switching</div>
-                                                </div>
-                                                <div>
-                                                    <div className="text-lg font-bold text-[#5d5d5d]">12</div>
-                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">SD-WAN</div>
-                                                </div>
-                                            </div>
-
-                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#9ab0d6] bg-[#eef3fa] py-2 rounded-lg">
-                                                <div className="w-2 h-2 bg-[#9ab0d6] rounded-full animate-spin"></div>
-                                                79 Sites Syncing
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <NetOptixDashboard />
                                 </div>
 
 

@@ -1,19 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface EmoteGANProps {
-    onBack: () => void;
+    onBack?: () => void;
 }
 
-export const EmoteGAN: React.FC<EmoteGANProps> = ({ onBack }) => {
+export const EmoteGAN: React.FC<EmoteGANProps> = () => {
     return (
         <div className="min-h-screen bg-paper animate-fade-in-up selection:bg-accent-yellow selection:text-black">
             {/* Navigation */}
             <nav className="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
                 <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-                    <button onClick={onBack} className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group">
+                    <Link to="/" className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors group">
                         <span className="group-hover:-translate-x-1 transition-transform">←</span>
                         Back to Portfolio
-                    </button>
+                    </Link>
                     <span className="font-serif font-bold text-xl">EmoteGAN</span>
                 </div>
             </nav>
