@@ -255,7 +255,14 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                             </ol>
                                         </div>
 
-                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] bg-[#1e1e1e] shadow-sm mt-6">
+                                        <div className="flex justify-end items-center gap-2 mt-6 mb-2">
+                                            <span className="relative flex h-2 w-2">
+                                                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#7b8064] opacity-75"></span>
+                                                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#7b8064]"></span>
+                                            </span>
+                                            <span className="text-xs text-[#7b8064] font-medium uppercase tracking-wider">Click to view code</span>
+                                        </div>
+                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] bg-[#1e1e1e] shadow-sm">
                                             <button
                                                 onClick={() => setIsCodeOpen(!isCodeOpen)}
                                                 className="w-full flex items-center justify-between px-4 py-3 bg-[#2d2d2d] border-b border-[#3d3d3d] hover:bg-[#363636] transition-colors"
