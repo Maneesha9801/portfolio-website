@@ -117,14 +117,7 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                         How might we transform network debugging from a task of reading and memorizing into a task of seeing and reacting?
                                     </p>
 
-                                    <div className="rounded-xl overflow-hidden border border-gray-200 shadow-sm">
-                                        <img
-                                            src={`${import.meta.env.BASE_URL}netoptix-prototype-ideation.jpg`}
-                                            alt="Prototype Ideation Framework"
-                                            className="w-full h-auto"
-                                        />
-                                        <p className="text-xs text-gray-500 p-3 bg-gray-50 text-center border-t border-gray-200">Initial Prototype Ideation & Framework Sketch</p>
-                                    </div>
+
                                 </div>
                             </div>
                         </section>
@@ -166,6 +159,15 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                     <p className="text-[#5d5d5d] leading-relaxed">
                                         I designed a dashboard for network operators to always get a quick health summary of the topology based on the terminal logs, that will be updated on a live basis.
                                     </p>
+
+                                    <div className="rounded-xl overflow-hidden border border-[#D9E4E0] shadow-sm max-w-2xl mb-6">
+                                        <img
+                                            src={`${import.meta.env.BASE_URL}netoptix-dashboard-sketch.jpg`}
+                                            alt="Dashboard Design Sketch"
+                                            className="w-full h-auto"
+                                        />
+                                        <p className="text-xs text-[#888] p-2 bg-[#f9fdf5] text-center border-t border-[#D9E4E0]">Initial Dashboard Sketch</p>
+                                    </div>
 
                                     <NetOptixDashboard />
                                 </div>
