@@ -87,7 +87,7 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                             </div>
                             <div className="md:col-span-8 space-y-8">
                                 <p className="text-xl leading-relaxed text-gray-700">
-                                    Network Engineering is still stuck in the 1980s. To debug a slow network, an engineer must SSH into multiple nodes, read thousands of lines of black-and-white text (CLI logs), and mentally construct a map of the network in their head.
+                                    Network Engineering often feels stuck in a terminal-first world. At Ribbon Communications, I commonly faced a critical invisibility problem: routing protocols when configured without traffic engineering blindly prefer the 'Shortest Path' metric, often flooding a single link while alternative, higher-cost paths sit idle. When such issues were raised, diagnosing this congestion was a very exhausting process. It required SSH-ing into dozens of disjointed nodes, parsing thousands of lines of monochrome CLI logs, and manually correlating asynchronous timestamps to understand what was going on in the network. Essentially, I was forced to mentally render a complex, dynamic topology inside my head because the tools offered no visual spatial awareness.
                                 </p>
                                 <div className="bg-red-50 p-8 rounded-2xl border border-red-100">
                                     <h3 className="text-lg font-bold mb-4 text-red-600">The Friction</h3>
