@@ -181,7 +181,16 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                         <h3 className="text-2xl font-serif mb-4 text-[#7b8064] group-hover:text-[#9ab0d6] transition-colors">Intervention A: Logic-First Topology (The Overview)</h3>
                                         <p className="text-[#5d5d5d] mb-2"><strong>The UX Decision:</strong> Physical maps create noise. I designed a Logical Topology that spatially groups nodes by their routing hierarchy (ISIS Level 1 Aggregation vs. Level 2 Core).</p>
                                         <p className="text-[#5d5d5d] mb-2"><strong>The Engineering:</strong> I utilized Flex Algorithms to color-code paths based on intent (e.g., Green = Low Latency, Blue = IGP Metric), allowing engineers to distinguish "Core Traffic" from "Edge Traffic" instantly.</p>
-                                        <p className="text-[#7b8064] font-medium"><strong>The Outcome:</strong> Instant architectural awareness. The user understands the network's behavior, not just its wiring.</p>
+                                        <p className="text-[#7b8064] font-medium mb-6"><strong>The Outcome:</strong> Instant architectural awareness. The user understands the network's behavior, not just its wiring.</p>
+
+                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] shadow-sm max-w-2xl mt-4">
+                                            <img
+                                                src={`${import.meta.env.BASE_URL}netoptix-flex-algo.png`}
+                                                alt="Flex Algorithm Visualization"
+                                                className="w-full h-auto"
+                                            />
+                                            <p className="text-xs text-[#888] p-2 bg-[#f9fdf5] text-center border-t border-[#D9E4E0]">Flex Algorithm Color Coding</p>
+                                        </div>
                                     </div>
 
                                     <div className="group border-l-2 border-[#D9E4E0] pl-6 hover:border-[#D7C59F] transition-colors">
