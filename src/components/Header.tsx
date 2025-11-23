@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export const Header: React.FC = () => {
     const [isScrolled, setIsScrolled] = useState(false);
+    const location = useLocation();
+    const navigate = useNavigate();
 
     useEffect(() => {
         const handleScroll = () => {
@@ -10,6 +13,20 @@ export const Header: React.FC = () => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const targetId = href.replace('#', '');
+
+        if (location.pathname === '/' && !location.hash) {
+            const element = document.getElementById(targetId);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        } else {
+            navigate('/', { state: { scrollTo: targetId } });
+        }
+    };
 
     const navLinks = [
         { name: 'Projects', href: '#projects' },
@@ -21,13 +38,14 @@ export const Header: React.FC = () => {
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-4' : 'bg-transparent py-6'}`}>
             <div className="container mx-auto px-6 flex justify-between items-center">
-                <a href="#" className="text-2xl font-serif font-bold tracking-tight">Maneesha</a>
+                <a href="#" onClick={(e) => handleNavClick(e, '#')} className="text-2xl font-serif font-bold tracking-tight">Maneesha</a>
 
                 <nav className="hidden md:flex gap-8">
                     {navLinks.map((link) => (
                         <a
                             key={link.name}
                             href={link.href}
+                            onClick={(e) => handleNavClick(e, link.href)}
                             className="text-sm font-medium text-gray-600 hover:text-black transition-colors"
                         >
                             {link.name}

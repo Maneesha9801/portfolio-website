@@ -164,7 +164,7 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                 <div className="space-y-6">
                                     <h3 className="text-2xl font-serif font-medium text-[#7b8064]">UX Research: Dashboard Design</h3>
                                     <p className="text-[#5d5d5d] leading-relaxed">
-                                        I designed a UI framework for network operators to always get a quick health summary of the topology based on the terminal logs, that will be updated on a live basis.
+                                        I designed a dashboard for network operators to always get a quick health summary of the topology based on the terminal logs, that will be updated on a live basis.
                                     </p>
 
                                     <NetOptixDashboard />

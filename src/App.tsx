@@ -20,6 +20,21 @@ function ScrollToTop() {
 }
 
 function Home() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state && (location.state as any).scrollTo) {
+      const targetId = (location.state as any).scrollTo;
+      const element = document.getElementById(targetId);
+      if (element) {
+        // Small timeout to ensure rendering is complete
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <>
       <Header />
