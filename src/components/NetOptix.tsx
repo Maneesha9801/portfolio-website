@@ -49,7 +49,7 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                         <div>
                             <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">Tech Stack</h3>
                             <div className="flex flex-wrap gap-2">
-                                {['React.js', 'React Flow', 'D3.js', 'Python', 'WebSockets'].map(tech => (
+                                {['HTML5 Canvas', 'Vanilla JS', 'CSS3', 'MPLS Simulation'].map(tech => (
                                     <span key={tech} className="bg-gray-100 px-3 py-1 rounded-full text-sm font-medium">
                                         {tech}
                                     </span>
@@ -60,11 +60,11 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
 
                     {/* Project Demo */}
                     <section className="mb-20">
-                        <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-100 bg-white">
-                            <img
-                                src={`${import.meta.env.BASE_URL}netoptix-demo.png`}
-                                alt="NetOptix Dashboard Demo"
-                                className="w-full h-auto"
+                        <div className="rounded-2xl overflow-hidden bg-white max-w-4xl mx-auto h-[600px]">
+                            <iframe
+                                src={`${import.meta.env.BASE_URL}netoptix-sim.html`}
+                                title="NetOptix Simulation"
+                                className="w-full h-full border-0"
                             />
                         </div>
                         <div className="flex flex-col items-center mt-4 gap-2">
@@ -72,7 +72,7 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                 Live topology visualization with real-time traffic health indicators.
                             </p>
                             <p className="text-xs text-gray-400">
-                                Source: Internal Prototype Recording
+                                Source: Live Interactive Simulation
                             </p>
                         </div>
                     </section>
