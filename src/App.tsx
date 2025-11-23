@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { HashRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Projects } from './components/Projects';
@@ -51,7 +51,7 @@ function Home() {
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-website/">
       <div className="min-h-screen bg-paper text-black font-sans selection:bg-accent-yellow selection:text-black">
         <ScrollToTop />
         <Routes>
