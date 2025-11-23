@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { NetOptixDashboard } from './NetOptixDashboard';
 
@@ -6,7 +6,90 @@ interface NetOptixProps {
     onBack?: () => void;
 }
 
+const PERL_CODE = `#!/usr/bin/perl
+use strict;
+use warnings;
+use JSON;
+use Time::HiRes qw(gettimeofday);
+
+# =======================================================
+# 1. CONFIGURATION & REGEX PATTERNS
+# Purpose: Extract structured data from unstructured CLI text
+# =======================================================
+
+# Regex to capture ISIS Neighbor details (SystemID, Interface, State, Metric)
+# Example Log: "L2  N1_Router  ge-1/0/0  Up  30  ..."
+my $isis_regex = qr/^(L[12])\\s+([a-zA-Z0-9_-]+)\\s+(ge-[0-9\\/]+)\\s+(Up|Down|Init)\\s+(\\d+)/;
+
+# State Machine Storage
+my %network_state = ();
+my $FLAP_THRESHOLD = 2.0; # Seconds to consider a link "flapping"
+
+# =======================================================
+# 2. PARSING ENGINE
+# Purpose: Read raw stream (SSH or .zstf) and normalize data
+# =======================================================
+
+sub parse_log_stream {
+    my ($line) = @_;
+    chomp $line;
+
+    # Regex Extraction Logic
+    if ($line =~ $isis_regex) {
+        my ($level, $neighbor_id, $interface, $status, $metric) = ($1, $2, $3, $4, $5);
+        
+        # Create a unique key for the link
+        my $link_key = "$neighbor_id|$interface";
+
+        # State Machine: Check for Flapping Links
+        if (exists $network_state{$link_key}) {
+            my $last_update = $network_state{$link_key}->{'timestamp'};
+            my $current_time = gettimeofday();
+            my $last_status = $network_state{$link_key}->{'status'};
+
+            # If status changed too quickly, flag as 'FLAPPING' and suppress alert
+            if ($status ne $last_status && ($current_time - $last_update) < $FLAP_THRESHOLD) {
+                $network_state{$link_key}->{'condition'} = 'CRITICAL_FLAP';
+                return; # Suppress noise
+            }
+        }
+
+        # Update State
+        $network_state{$link_key} = {
+            neighbor    => $neighbor_id,
+            interface   => $interface,
+            status      => $status,
+            metric      => int($metric),
+            timestamp   => gettimeofday(),
+            condition   => 'STABLE',
+            topology_l  => $level
+        };
+    }
+}
+
+# =======================================================
+# 3. JSON EXPORT
+# Purpose: Push clean data to React Frontend
+# =======================================================
+
+sub export_topology {
+    my $json = JSON->new->allow_nonref;
+    
+    # Convert Hash to Array for D3.js / React Flow
+    my @nodes_and_links = values %network_state;
+    
+    print $json->encode(\\@nodes_and_links);
+}
+
+# Simulation: Reading from STDIN (piped from SSH or zstdcat)
+while (<STDIN>) {
+    parse_log_stream($_);
+}
+
+export_topology();`;
+
 export const NetOptix: React.FC<NetOptixProps> = () => {
+    const [isCodeOpen, setIsCodeOpen] = useState(false);
     return (
         <div className="min-h-screen bg-paper animate-fade-in-up selection:bg-accent-yellow selection:text-black">
             {/* Navigation */}
@@ -172,40 +255,31 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                                             </ol>
                                         </div>
 
-                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] bg-[#1e1e1e] shadow-sm mt-4">
-                                            <div className="flex items-center px-4 py-2 bg-[#2d2d2d] border-b border-[#3d3d3d]">
-                                                <div className="flex gap-2">
-                                                    <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
-                                                    <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
-                                                    <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] bg-[#1e1e1e] shadow-sm mt-6">
+                                            <button
+                                                onClick={() => setIsCodeOpen(!isCodeOpen)}
+                                                className="w-full flex items-center justify-between px-4 py-3 bg-[#2d2d2d] border-b border-[#3d3d3d] hover:bg-[#363636] transition-colors"
+                                            >
+                                                <div className="flex items-center gap-3">
+                                                    <div className="flex gap-2">
+                                                        <div className="w-3 h-3 rounded-full bg-[#ff5f56]"></div>
+                                                        <div className="w-3 h-3 rounded-full bg-[#ffbd2e]"></div>
+                                                        <div className="w-3 h-3 rounded-full bg-[#27c93f]"></div>
+                                                    </div>
+                                                    <span className="ml-4 text-xs text-gray-400 font-mono">regex.pl</span>
                                                 </div>
-                                                <span className="ml-4 text-xs text-gray-400 font-mono">regex.pl</span>
-                                            </div>
-                                            <div className="p-4 overflow-x-auto">
-                                                <pre className="text-xs font-mono text-gray-300 leading-relaxed">
-                                                    {`# Regex to capture ISIS Neighbor details (SystemID, Interface, State, Metric)
-# Example Log: "L2  N1_Router  ge-1/0/0  Up  30  ..."
-my $isis_regex = qr/^(L[12])\\s+([a-zA-Z0-9_-]+)\\s+(ge-[0-9\\/]+)\\s+(Up|Down|Init)\\s+(\\d+)/;
+                                                <span className="text-gray-400 text-xs font-mono">
+                                                    {isCodeOpen ? 'Hide Code' : 'Show Code'}
+                                                </span>
+                                            </button>
 
-# State Machine: Check for Flapping Links
-if (exists $network_state{$link_key}) {
-    # If status changed too quickly, flag as 'FLAPPING'
-    if ($status ne $last_status && ($current_time - $last_update) < $FLAP_THRESHOLD) {
-        $network_state{$link_key}->{'condition'} = 'CRITICAL_FLAP';
-        return; # Suppress noise
-    }
-}`}
-                                                </pre>
-                                            </div>
-                                        </div>
-
-                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] shadow-sm mt-4">
-                                            <img
-                                                src={`${import.meta.env.BASE_URL}regex-perl-snippet.png`}
-                                                alt="Perl Regex Script in IDE"
-                                                className="w-full h-auto"
-                                            />
-                                            <p className="text-xs text-[#888] p-2 bg-[#f9fdf5] text-center border-t border-[#D9E4E0]">Full Script Implementation</p>
+                                            {isCodeOpen && (
+                                                <div className="p-4 overflow-x-auto animate-fade-in">
+                                                    <pre className="text-xs font-mono text-gray-300 leading-relaxed">
+                                                        {PERL_CODE}
+                                                    </pre>
+                                                </div>
+                                            )}
                                         </div>
                                     </div>
                                 </div>
