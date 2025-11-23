@@ -122,25 +122,25 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                             </div>
                             <div className="md:col-span-8 space-y-12">
                                 <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
-                                    <h3 className="text-2xl font-serif font-medium text-slate-800 mb-4">The Setup</h3>
-                                    <p className="text-slate-600 leading-relaxed mb-6">
-                                        The visualization is built on a robust network configuration designed for high availability and traffic engineering:
+                                    <h3 className="text-2xl font-serif font-medium text-[#7b8064] mb-4">The Setup</h3>
+                                    <p className="text-[#5d5d5d] leading-relaxed mb-6">
+                                        The visualization will directly reflect the logs shared by the tester/reporter.
                                     </p>
-                                    <ul className="space-y-3 font-mono text-sm text-slate-600 bg-slate-50 p-6 rounded-xl border border-slate-200">
+                                    <ul className="space-y-3 font-mono text-sm text-[#5d5d5d] bg-[#f9fdf5] p-6 rounded-xl border border-[#C3C7A6]">
                                         <li className="flex items-center gap-3">
-                                            <span className="w-2 h-2 bg-emerald-500 rounded-full"></span>
+                                            <span className="w-2 h-2 bg-[#C3C7A6] rounded-full"></span>
                                             IGP = ISIS ML
                                         </li>
                                         <li className="flex items-center gap-3">
-                                            <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+                                            <span className="w-2 h-2 bg-[#9ab0d6] rounded-full"></span>
                                             Topology includes Multiple flex algo slices
                                         </li>
                                         <li className="flex items-center gap-3">
-                                            <span className="w-2 h-2 bg-orange-500 rounded-full"></span>
+                                            <span className="w-2 h-2 bg-[#D7C59F] rounded-full"></span>
                                             ISIS FRR - Ti-LFA enabled
                                         </li>
                                         <li className="flex items-center gap-3">
-                                            <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+                                            <span className="w-2 h-2 bg-[#7b8064] rounded-full"></span>
                                             BFD configured = 10*3
                                         </li>
                                     </ul>
@@ -148,163 +148,171 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
 
                                 {/* UX Research Cards Section */}
                                 <div className="space-y-6">
-                                    <h3 className="text-2xl font-serif font-medium text-slate-800">UX Research: Topology Cards</h3>
-                                    <p className="text-slate-600 leading-relaxed">
-                                        Inspired by modern dashboard aesthetics, I designed card-based topology previews to give network operators a quick health summary before drilling down.
+                                    <h3 className="text-2xl font-serif font-medium text-[#7b8064]">UX Research: Topology Cards</h3>
+                                    <p className="text-[#5d5d5d] leading-relaxed">
+                                        I also designed a UI framework for network operators to always get a quick health summary of the topology based on the terminal logs, that will be updated on a live basis.
                                     </p>
 
-                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+                                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 bg-[#EEF1DE] p-6 rounded-2xl border border-[#C3C7A6]">
                                         {/* Card 1: TechnoCore */}
-                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-[#D9E4E0] hover:shadow-md transition-shadow">
                                             <div className="flex justify-between items-start mb-6">
                                                 <div className="flex gap-3 items-center">
-                                                    <div className="p-2 bg-slate-50 rounded-lg text-slate-400">
+                                                    <div className="p-2 bg-[#EEF1DE] rounded-lg text-[#7b8064]">
                                                         <Network size={20} />
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-semibold text-slate-700 text-sm">TechnoCore</h4>
-                                                        <span className="text-xs text-slate-400">Deployment</span>
+                                                        <h4 className="font-semibold text-[#5d5d5d] text-sm">TechnoCore</h4>
+                                                        <span className="text-xs text-[#888]">Deployment</span>
                                                     </div>
                                                 </div>
-                                                <div className="text-slate-300">•••</div>
+                                                <div className="text-[#C3C7A6]">•••</div>
                                             </div>
 
                                             {/* Mini Topology */}
                                             <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
-                                                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center z-10"><Router size={14} /></div>
-                                                <div className="w-12 h-0.5 bg-slate-200 absolute"></div>
-                                                <div className="w-8 h-8 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center z-10"><Activity size={14} /></div>
-                                                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
+                                                <div className="w-8 h-8 rounded-full bg-[#E9ECCF] text-[#7b8064] flex items-center justify-center z-10"><Router size={14} /></div>
+                                                <div className="w-12 h-0.5 bg-[#D9E4E0] absolute"></div>
+                                                <div className="w-8 h-8 rounded-full bg-[#F1F0C8] text-[#D7C59F] flex items-center justify-center z-10"><Activity size={14} /></div>
+                                                <div className="w-8 h-8 rounded-full bg-[#D9E4E0] text-[#5d5d5d] flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
                                             </div>
 
                                             <div className="grid grid-cols-3 gap-2 text-center mb-6">
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">10</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Security</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">10</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Security</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">16</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Switching</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">16</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Switching</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">4</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">SD-WAN</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">4</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">SD-WAN</div>
                                                 </div>
                                             </div>
 
-                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-emerald-600 bg-emerald-50 py-2 rounded-lg">
-                                                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#7b8064] bg-[#E9ECCF] py-2 rounded-lg">
+                                                <div className="w-2 h-2 bg-[#7b8064] rounded-full"></div>
                                                 51 Sites Synced
                                             </div>
                                         </div>
 
                                         {/* Card 2: Hyperion */}
-                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-[#D9E4E0] hover:shadow-md transition-shadow">
                                             <div className="flex justify-between items-start mb-6">
                                                 <div className="flex gap-3 items-center">
-                                                    <div className="p-2 bg-slate-50 rounded-lg text-slate-400">
+                                                    <div className="p-2 bg-[#EEF1DE] rounded-lg text-[#7b8064]">
                                                         <Network size={20} />
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-semibold text-slate-700 text-sm">Hyperion</h4>
-                                                        <span className="text-xs text-slate-400">WorldWeb</span>
+                                                        <h4 className="font-semibold text-[#5d5d5d] text-sm">Hyperion</h4>
+                                                        <span className="text-xs text-[#888]">WorldWeb</span>
                                                     </div>
                                                 </div>
-                                                <div className="px-2 py-0.5 bg-orange-100 text-orange-600 text-[10px] font-bold rounded uppercase">Updated</div>
+                                                <div className="px-2 py-0.5 bg-[#F1F0C8] text-[#D7C59F] text-[10px] font-bold rounded uppercase">Updated</div>
                                             </div>
 
                                             {/* Mini Topology */}
                                             <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
-                                                <div className="w-8 h-8 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center z-10"><Router size={14} /></div>
-                                                <div className="w-12 h-0.5 bg-slate-200 absolute"></div>
-                                                <div className="w-8 h-8 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center z-10"><Activity size={14} /></div>
-                                                <div className="w-8 h-8 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
+                                                <div className="w-8 h-8 rounded-full bg-[#E9ECCF] text-[#7b8064] flex items-center justify-center z-10"><Router size={14} /></div>
+                                                <div className="w-12 h-0.5 bg-[#D9E4E0] absolute"></div>
+                                                <div className="w-8 h-8 rounded-full bg-[#D7C59F] text-white flex items-center justify-center z-10"><Activity size={14} /></div>
+                                                <div className="w-8 h-8 rounded-full bg-[#D9E4E0] text-[#5d5d5d] flex items-center justify-center z-10 ml-8"><Network size={14} /></div>
                                             </div>
 
                                             <div className="grid grid-cols-3 gap-2 text-center mb-6">
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">1</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Security</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">1</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Security</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">2</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Switching</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">2</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Switching</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">3</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">SD-WAN</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">3</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">SD-WAN</div>
                                                 </div>
                                             </div>
 
-                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-red-500 bg-red-50 py-2 rounded-lg">
-                                                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#D7C59F] bg-[#F1F0C8] py-2 rounded-lg">
+                                                <div className="w-2 h-2 bg-[#D7C59F] rounded-full animate-pulse"></div>
                                                 145 Sites Out-of-Sync
                                             </div>
                                         </div>
 
                                         {/* Card 3: Hegemony */}
-                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                                        <div className="bg-white p-5 rounded-xl shadow-sm border border-[#D9E4E0] hover:shadow-md transition-shadow">
                                             <div className="flex justify-between items-start mb-6">
                                                 <div className="flex gap-3 items-center">
-                                                    <div className="p-2 bg-slate-50 rounded-lg text-slate-400">
+                                                    <div className="p-2 bg-[#EEF1DE] rounded-lg text-[#7b8064]">
                                                         <Network size={20} />
                                                     </div>
                                                     <div>
-                                                        <h4 className="font-semibold text-slate-700 text-sm">Hegemony</h4>
-                                                        <span className="text-xs text-slate-400">Colony Sites</span>
+                                                        <h4 className="font-semibold text-[#5d5d5d] text-sm">Hegemony</h4>
+                                                        <span className="text-xs text-[#888]">Colony Sites</span>
                                                     </div>
                                                 </div>
-                                                <div className="px-2 py-0.5 bg-emerald-100 text-emerald-600 text-[10px] font-bold rounded uppercase">New</div>
+                                                <div className="px-2 py-0.5 bg-[#E9ECCF] text-[#7b8064] text-[10px] font-bold rounded uppercase">New</div>
                                             </div>
 
                                             {/* Mini Topology */}
                                             <div className="flex justify-center items-center gap-2 mb-8 relative h-16">
-                                                <div className="w-12 h-12 rounded-full bg-yellow-100 text-yellow-600 flex items-center justify-center z-10 shadow-sm border-4 border-white"><Activity size={24} /></div>
+                                                <div className="w-12 h-12 rounded-full bg-[#F1F0C8] text-[#D7C59F] flex items-center justify-center z-10 shadow-sm border-4 border-white"><Activity size={24} /></div>
                                             </div>
 
                                             <div className="grid grid-cols-3 gap-2 text-center mb-6">
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">19</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Security</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">19</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Security</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">8</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">Switching</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">8</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">Switching</div>
                                                 </div>
                                                 <div>
-                                                    <div className="text-lg font-bold text-slate-700">12</div>
-                                                    <div className="text-[10px] text-slate-400 uppercase tracking-wide">SD-WAN</div>
+                                                    <div className="text-lg font-bold text-[#5d5d5d]">12</div>
+                                                    <div className="text-[10px] text-[#888] uppercase tracking-wide">SD-WAN</div>
                                                 </div>
                                             </div>
 
-                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-purple-600 bg-purple-50 py-2 rounded-lg">
-                                                <div className="w-2 h-2 bg-purple-500 rounded-full animate-spin"></div>
+                                            <div className="flex items-center justify-center gap-2 text-xs font-medium text-[#9ab0d6] bg-[#eef3fa] py-2 rounded-lg">
+                                                <div className="w-2 h-2 bg-[#9ab0d6] rounded-full animate-spin"></div>
                                                 79 Sites Syncing
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <p className="text-xl leading-relaxed text-gray-700">
+                                <p className="text-xl leading-relaxed text-[#5d5d5d]">
                                     I approached this not just as a dashboard, but as a translation layer. I applied Shneiderman’s Mantra of interaction design: "Overview first, zoom and filter, then details-on-demand."
                                 </p>
 
-                                <div className="space-y-8">
-                                    <div className="group border-l-2 border-gray-200 pl-6 hover:border-accent-blue transition-colors">
-                                        <h3 className="text-2xl font-serif mb-4 group-hover:text-accent-blue transition-colors">Intervention A: Topology as Geography</h3>
-                                        <p className="text-gray-600 mb-2"><strong>The UX Decision:</strong> Instead of a list of IPs, I used a Force-Directed Graph. Nodes naturally space themselves out based on connection density.</p>
-                                        <p className="text-gray-800"><strong>The Outcome:</strong> Instant spatial awareness. An engineer can see "The Core Router is central" immediately.</p>
+                                <div className="space-y-12">
+                                    <h2 className="text-3xl font-serif text-[#7b8064] mb-8">2. The Approach: Cognitive Ergonomics</h2>
+                                    <p className="text-lg text-[#5d5d5d] mb-8">
+                                        I designed this tool as a translation layer between machine protocols and human perception. The goal was to shift the user's cognitive mode from "Reading & Memorizing" (System 2 thinking) to "Seeing & Reacting" (System 1 thinking).
+                                    </p>
+
+                                    <div className="group border-l-2 border-[#D9E4E0] pl-6 hover:border-[#9ab0d6] transition-colors">
+                                        <h3 className="text-2xl font-serif mb-4 text-[#7b8064] group-hover:text-[#9ab0d6] transition-colors">Intervention A: Logic-First Topology (The Overview)</h3>
+                                        <p className="text-[#5d5d5d] mb-2"><strong>The UX Decision:</strong> Physical maps create noise. I designed a Logical Topology that spatially groups nodes by their routing hierarchy (ISIS Level 1 Aggregation vs. Level 2 Core).</p>
+                                        <p className="text-[#5d5d5d] mb-2"><strong>The Engineering:</strong> I utilized Flex Algorithms to color-code paths based on intent (e.g., Green = Low Latency, Blue = IGP Metric), allowing engineers to distinguish "Core Traffic" from "Edge Traffic" instantly.</p>
+                                        <p className="text-[#7b8064] font-medium"><strong>The Outcome:</strong> Instant architectural awareness. The user understands the network's behavior, not just its wiring.</p>
                                     </div>
 
-                                    <div className="group border-l-2 border-gray-200 pl-6 hover:border-red-500 transition-colors">
-                                        <h3 className="text-2xl font-serif mb-4 group-hover:text-red-500 transition-colors">Intervention B: Traffic as Physiology</h3>
-                                        <p className="text-gray-600 mb-2"><strong>The UX Decision:</strong> I used Biomimicry. Healthy links look like stable grey lines. Congested links pulse and turn red, mimicking inflammation.</p>
-                                        <p className="text-gray-800"><strong>The Outcome:</strong> Pre-attentive processing. The user spots the problem in &lt;200ms.</p>
+                                    <div className="group border-l-2 border-[#D9E4E0] pl-6 hover:border-[#D7C59F] transition-colors">
+                                        <h3 className="text-2xl font-serif mb-4 text-[#7b8064] group-hover:text-[#D7C59F] transition-colors">Intervention B: Visualizing Stress (The Feedback)</h3>
+                                        <p className="text-[#5d5d5d] mb-2"><strong>The UX Decision:</strong> I replaced static lines with Biomimetic Interfaces. Healthy links are thin and stable; congested links physically thicken and pulse, mimicking inflammation in a biological system.</p>
+                                        <p className="text-[#5d5d5d] mb-2"><strong>The Engineering:</strong> I implemented a physics-based congestion engine where Utilization &gt; 100% triggers a "Stress Animation" and visually slows packet velocity to represent latency.</p>
+                                        <p className="text-[#7b8064] font-medium"><strong>The Outcome:</strong> Pre-attentive processing. The user spots the bottleneck in &lt;200ms—before they even read the data.</p>
                                     </div>
 
-                                    <div className="group border-l-2 border-gray-200 pl-6 hover:border-accent-green transition-colors">
-                                        <h3 className="text-2xl font-serif mb-4 group-hover:text-accent-green transition-colors">Intervention C: Progressive Disclosure</h3>
-                                        <p className="text-gray-600 mb-2"><strong>The UX Decision:</strong> CLI logs are useful, but overwhelming. I hid them behind a "Contextual Drill-down."</p>
-                                        <p className="text-gray-800"><strong>The Outcome:</strong> The power of the CLI is preserved, but only accessed when needed. Reduces visual noise by 90%.</p>
+                                    <div className="group border-l-2 border-[#D9E4E0] pl-6 hover:border-[#C3C7A6] transition-colors">
+                                        <h3 className="text-2xl font-serif mb-4 text-[#7b8064] group-hover:text-[#C3C7A6] transition-colors">Intervention C: Contextual Reconstruction (The Details)</h3>
+                                        <p className="text-[#5d5d5d] mb-2"><strong>The UX Decision:</strong> Raw CLI configs are overwhelming but necessary for validation. Instead of dumping static logs, I built a "Just-in-Time" information architecture.</p>
+                                        <p className="text-[#5d5d5d] mb-2"><strong>The Engineering:</strong> I built a parser that dynamically reconstructs the specific router configuration and CLI commands (e.g., set protocols isis...) based on the node's active role, accessible via a context menu.</p>
+                                        <p className="text-[#7b8064] font-medium"><strong>The Outcome:</strong> The full power of the terminal is preserved but scoped. Visual noise is reduced by 90%, keeping the canvas clean for decision-making.</p>
                                     </div>
                                 </div>
                             </div>
@@ -322,20 +330,17 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                     </p>
                                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                                            <div className="text-4xl font-bold text-accent-green mb-2 font-serif">40%</div>
+                                            <div className="text-4xl font-bold text-[#C3C7A6] mb-2 font-serif">40%</div>
                                             <div className="font-bold text-gray-800 mb-1">Faster Diagnosis</div>
                                             <p className="text-sm text-gray-500">Reduced time-to-diagnosis from ~15 mins to ~9 mins.</p>
                                         </div>
                                         <div className="bg-white p-6 rounded-xl border border-gray-200 shadow-sm">
-                                            <div className="text-4xl font-bold text-accent-blue mb-2 font-serif">3x</div>
+                                            <div className="text-4xl font-bold text-[#9ab0d6] mb-2 font-serif">3x</div>
                                             <div className="font-bold text-gray-800 mb-1">Fewer Errors</div>
                                             <p className="text-sm text-gray-500">Junior engineers made significantly fewer mistakes.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <blockquote className="text-2xl font-serif italic text-gray-600 border-l-4 border-accent-green pl-6 py-2">
-                                    "It turns debugging from 'searching for a needle in a haystack' into 'following a map'."
-                                </blockquote>
                             </div>
                         </section>
 
