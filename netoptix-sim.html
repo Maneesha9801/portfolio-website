@@ -356,10 +356,10 @@
                 <span style="font-size: 12px; opacity: 0.5;">✥</span>
             </div>
             <div class="legend-item">
-                <div class="dot" style="background: #9ab0d6;"></div>Standard Traffic (Best Path)
+                <div class="dot" style="background: #C3C7A6;"></div>Standard Traffic (Best Path)
             </div>
             <div class="legend-item">
-                <div class="dot" style="background: #D7C59F;"></div>Flex Algo 130 (Priority)
+                <div class="dot" style="background: #9ab0d6;"></div>Flex Algo 130 (Priority)
             </div>
             <div class="legend-item">
                 <div class="dot" style="background: #F1F0C8; border: 1px solid #bbb;"></div>Access Traffic (TEQ9-CE)
@@ -396,7 +396,7 @@
                         <tr>
                             <td><strong>128</strong></td>
                             <td><span class="dot"
-                                    style="background:#9ab0d6; display:inline-block; vertical-align:middle;"></span>Blue
+                                    style="background:#C3C7A6; display:inline-block; vertical-align:middle;"></span>Green
                             </td>
                             <td><strong>SPF (Metric)</strong>: Standard IGP Cost</td>
                             <td>CE &rarr; N2 &rarr; N5 &rarr; N7</td>
@@ -404,7 +404,7 @@
                         <tr>
                             <td><strong>129</strong></td>
                             <td><span class="dot"
-                                    style="background:#C3C7A6; display:inline-block; vertical-align:middle;"></span>Green
+                                    style="background:#9ab0d6; display:inline-block; vertical-align:middle;"></span>Blue
                             </td>
                             <td><strong>Low Delay</strong>: Latency Sensitive</td>
                             <td>CE &rarr; N1 &rarr; N5 &rarr; N6</td>
@@ -849,14 +849,16 @@
             let spawnRateMultiplier = isPeakHour ? 4.0 : 1.0;
 
             if (Math.random() < 0.02 * spawnRateMultiplier) {
-                packets.push(new Packet(paths['shortest'], 'shortest', '#9ab0d6', 2.8));
+                // Standard Traffic (Best Path) - Green
+                packets.push(new Packet(paths['shortest'], 'shortest', '#C3C7A6', 2.8));
             }
             if (Math.random() < 0.04 * spawnRateMultiplier) {
                 let p = isPeakHour ? ['Teq9', 'CE', 'N1', 'N5'] : ['Teq9', 'CE'];
                 packets.push(new Packet(p, 'access', '#F1F0C8', 2.5));
             }
             if (Math.random() < 0.03) {
-                packets.push(new Packet(paths['red'], 'red', '#D7C59F', 3));
+                // Flex Algo (Priority) - Blue
+                packets.push(new Packet(paths['red'], 'red', '#9ab0d6', 3));
             }
         }
 
