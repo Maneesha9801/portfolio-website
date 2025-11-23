@@ -20,7 +20,7 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                 </div>
             </nav>
 
-            <main className="pt-32 pb-20 px-6">
+            <main className="pt-32 pb-20 px-8 md:px-12 lg:px-24">
                 <div className="container mx-auto max-w-[90rem]">
                     {/* Hero Section */}
                     <header className="mb-20 max-w-5xl mx-auto">
@@ -62,7 +62,7 @@ export const NetOptix: React.FC<NetOptixProps> = () => {
                     {/* Project Demo */}
                     <section className="mb-20">
                         <h2 className="text-3xl font-serif text-center mb-8">Interactive Simulator</h2>
-                        <div className="rounded-2xl overflow-hidden bg-white max-w-4xl mx-auto h-[600px] p-4 border border-gray-100 shadow-sm">
+                        <div className="rounded-2xl overflow-hidden max-w-5xl mx-auto h-[600px] shadow-sm">
                             <iframe
                                 src={`${import.meta.env.BASE_URL}netoptix-sim.html`}
                                 title="NetOptix Simulation"
