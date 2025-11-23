@@ -23,6 +23,13 @@ export const Projects: React.FC<ProjectsProps> = () => {
             image: 'https://placehold.co/600x400/e8e8e8/1a1a1a?text=EmoteGAN&font=montserrat',
         },
         {
+            id: 'waysense',
+            title: 'WaySense',
+            category: 'Infrastructure-Light Indoor Navigation',
+            description: 'Designing a scalable localization engine for GPS-denied environments by repurposing existing Wi-Fi infrastructure.',
+            image: `${import.meta.env.BASE_URL}waysense-heatmap.png`,
+        },
+        {
             id: 'dry-sun',
             title: 'Dry Sun Logo',
             category: 'Branding',

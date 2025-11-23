@@ -8,6 +8,7 @@ import { About } from './components/About';
 import { Footer } from './components/Footer';
 import { EmoteGAN } from './components/EmoteGAN';
 import { NetOptix } from './components/NetOptix';
+import { WaySense } from './components/WaySense';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -52,14 +53,13 @@ function Home() {
 function App() {
   return (
     <Router basename="/portfolio-website/">
-      <div className="min-h-screen bg-paper text-black font-sans selection:bg-accent-yellow selection:text-black">
-        <ScrollToTop />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/netoptix" element={<NetOptix onBack={() => { }} />} />
-          <Route path="/emotegan" element={<EmoteGAN onBack={() => { }} />} />
-        </Routes>
-      </div>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/netoptix" element={<NetOptix />} />
+        <Route path="/emotegan" element={<EmoteGAN />} />
+        <Route path="/waysense" element={<WaySense />} />
+      </Routes>
     </Router>
   );
 }

@@ -14,7 +14,8 @@ const DIST_DIR = path.join(__dirname, '../dist');
 const routes = [
     '/',
     '/netoptix',
-    '/emotegan'
+    '/emotegan',
+    '/waysense'
 ];
 
 async function prerender() {
