@@ -290,7 +290,7 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
 
 
                                 <div className="space-y-12">
-                                    <h2 className="text-3xl font-serif text-[#7b8064] mb-8">2. The Approach: Cognitive Ergonomics</h2>
+
                                     <p className="text-lg text-[#5d5d5d] mb-8">
                                         I designed this tool as a translation layer between machine protocols and human perception. The goal was to shift the user's cognitive mode from "Reading & Memorizing" (System 2 thinking) to "Seeing & Reacting" (System 1 thinking).
                                     </p>
@@ -313,7 +313,26 @@ export const NetOptix: React.FC<NetOptixProps> = ({ onBack }) => {
                                         <h3 className="text-2xl font-serif mb-4 text-[#7b8064] group-hover:text-[#C3C7A6] transition-colors">Intervention C: Contextual Reconstruction (The Details)</h3>
                                         <p className="text-[#5d5d5d] mb-2"><strong>The UX Decision:</strong> Raw CLI configs are overwhelming but necessary for validation. Instead of dumping static logs, I built a "Just-in-Time" information architecture.</p>
                                         <p className="text-[#5d5d5d] mb-2"><strong>The Engineering:</strong> I built a parser that dynamically reconstructs the specific router configuration and CLI commands (e.g., set protocols isis...) based on the node's active role, accessible via a context menu.</p>
-                                        <p className="text-[#7b8064] font-medium"><strong>The Outcome:</strong> The full power of the terminal is preserved but scoped. Visual noise is reduced by 90%, keeping the canvas clean for decision-making.</p>
+                                        <p className="text-[#7b8064] font-medium mb-6"><strong>The Outcome:</strong> The full power of the terminal is preserved but scoped. Visual noise is reduced by 90%, keeping the canvas clean for decision-making.</p>
+
+                                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                                            <div className="rounded-xl overflow-hidden border border-[#D9E4E0] shadow-sm">
+                                                <img
+                                                    src={`${import.meta.env.BASE_URL}netoptix-topology-guide.png`}
+                                                    alt="Network Topology & Flex Algo Guide"
+                                                    className="w-full h-auto"
+                                                />
+                                                <p className="text-xs text-[#888] p-2 bg-[#f9fdf5] text-center border-t border-[#D9E4E0]">Topology Guide</p>
+                                            </div>
+                                            <div className="rounded-xl overflow-hidden border border-[#D9E4E0] shadow-sm">
+                                                <img
+                                                    src={`${import.meta.env.BASE_URL}netoptix-config-modal.png`}
+                                                    alt="Router Configuration Modal"
+                                                    className="w-full h-auto"
+                                                />
+                                                <p className="text-xs text-[#888] p-2 bg-[#f9fdf5] text-center border-t border-[#D9E4E0]">Contextual Config</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
