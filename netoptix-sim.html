@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MPLS Traffic Engineering & ISIS Simulation</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #EEF1DE;
             /* Palette Background */
             color: #5d5d5d;
@@ -21,23 +25,25 @@
 
         header {
             width: 100%;
-            padding: 1rem;
-            background-color: #D9E4E0;
-            /* Palette Blue/Gray */
-            border-bottom: 2px solid #C3C7A6;
+            padding: 1.25rem 3rem;
+            background-color: #fff;
+            /* Cleaner white background for enterprise look */
+            border-bottom: 1px solid #e5e7eb;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(195, 199, 166, 0.3);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
             z-index: 10;
         }
 
         h1 {
             margin: 0;
-            font-size: 1.2rem;
-            color: #7b8064;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            font-size: 1.5rem;
+            color: #2c3e50;
+            /* Darker, more professional color */
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.25rem;
         }
 
         .controls {
