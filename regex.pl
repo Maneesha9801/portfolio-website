@@ -4,23 +4,11 @@ use warnings;
 use JSON;
 use Time::HiRes qw(gettimeofday);
 
-# =======================================================
-# 1. CONFIGURATION & REGEX PATTERNS
-# Purpose: Extract structured data from unstructured CLI text
-# =======================================================
-
-# Regex to capture ISIS Neighbor details (SystemID, Interface, State, Metric)
-# Example Log: "L2  N1_Router  ge-1/0/0  Up  30  ..."
 my $isis_regex = qr/^(L[12])\s+([a-zA-Z0-9_-]+)\s+(ge-[0-9\/]+)\s+(Up|Down|Init)\s+(\d+)/;
 
 # State Machine Storage
 my %network_state = ();
 my $FLAP_THRESHOLD = 2.0; # Seconds to consider a link "flapping"
-
-# =======================================================
-# 2. PARSING ENGINE
-# Purpose: Read raw stream (SSH or .zstf) and normalize data
-# =======================================================
 
 sub parse_log_stream {
     my ($line) = @_;
@@ -58,11 +46,6 @@ sub parse_log_stream {
         };
     }
 }
-
-# =======================================================
-# 3. JSON EXPORT
-# Purpose: Push clean data to React Frontend
-# =======================================================
 
 sub export_topology {
     my $json = JSON->new->allow_nonref;
@@ -84,11 +67,6 @@ use warnings;
 use JSON;
 use Time::HiRes qw(gettimeofday);
 
-# =======================================================
-# 1. CONFIGURATION & REGEX PATTERNS
-# Purpose: Extract structured data from unstructured CLI text
-# =======================================================
-
 # Regex to capture ISIS Neighbor details (SystemID, Interface, State, Metric)
 # Example Log: "L2  N1_Router  ge-1/0/0  Up  30  ..."
 my $isis_regex = qr/^(L[12])\s+([a-zA-Z0-9_-]+)\s+(ge-[0-9\/]+)\s+(Up|Down|Init)\s+(\d+)/;
@@ -96,11 +74,6 @@ my $isis_regex = qr/^(L[12])\s+([a-zA-Z0-9_-]+)\s+(ge-[0-9\/]+)\s+(Up|Down|Init)
 # State Machine Storage
 my %network_state = ();
 my $FLAP_THRESHOLD = 2.0; # Seconds to consider a link "flapping"
-
-# =======================================================
-# 2. PARSING ENGINE
-# Purpose: Read raw stream (SSH or .zstf) and normalize data
-# =======================================================
 
 sub parse_log_stream {
     my ($line) = @_;
@@ -138,11 +111,6 @@ sub parse_log_stream {
         };
     }
 }
-
-# =======================================================
-# 3. JSON EXPORT
-# Purpose: Push clean data to React Frontend
-# =======================================================
 
 sub export_topology {
     my $json = JSON->new->allow_nonref;

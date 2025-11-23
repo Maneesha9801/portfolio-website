@@ -198,6 +198,15 @@ if (exists $network_state{$link_key}) {
                                                 </pre>
                                             </div>
                                         </div>
+
+                                        <div className="rounded-xl overflow-hidden border border-[#D9E4E0] shadow-sm mt-4">
+                                            <img
+                                                src={`${import.meta.env.BASE_URL}regex-perl-snippet.png`}
+                                                alt="Perl Regex Script in IDE"
+                                                className="w-full h-auto"
+                                            />
+                                            <p className="text-xs text-[#888] p-2 bg-[#f9fdf5] text-center border-t border-[#D9E4E0]">Full Script Implementation</p>
+                                        </div>
                                     </div>
                                 </div>
 
