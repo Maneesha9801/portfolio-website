@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { WaySenseDesignBoard } from './WaySenseDesignBoard';
 
 interface WaySenseProps {
     onBack?: () => void;
@@ -87,6 +88,15 @@ export const WaySense: React.FC<WaySenseProps> = () => {
                                     </ul>
                                 </div>
                             </div>
+                        </section>
+
+                        {/* Interactive Design Board */}
+                        <section className="mb-20">
+                            <h2 className="text-3xl font-serif text-center mb-8">Interactive Design System</h2>
+                            <WaySenseDesignBoard />
+                            <p className="text-center text-gray-500 text-sm mt-4">
+                                Explore the engineering decisions, digital twin architecture, and system logic.
+                            </p>
                         </section>
 
                         {/* The Engineering Logic */}
